@@ -1,0 +1,10 @@
+.logos-Partner{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1100px;
+}
+.logos-Partner img {
+    width: 100px;
+    height: 70px;
+}
