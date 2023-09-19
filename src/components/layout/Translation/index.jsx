@@ -1,8 +1,23 @@
 import React from 'react'
+import { TranslationText } from '../../../constants'
+import Button from '../../others/Button'
+import TranslationDocument from '../../others/TranslationDocument'
+import './style.css'
 
 const Translation = () => {
   return (
-    <div>Translation</div>
+    <div className='section'>
+      <div className="section-text">
+        <h2>{TranslationText.title}</h2>
+        <p className='text-section'>{TranslationText.description}</p> 
+      </div>
+      <div className="content content-translation">
+        {TranslationText.documentsType.map((item, index) => (
+          <TranslationDocument key={index} item={item} />
+        ))}
+      </div>
+      <Button />
+    </div>
   )
 }
 

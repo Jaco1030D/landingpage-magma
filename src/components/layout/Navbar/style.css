@@ -1,0 +1,15 @@
+#logo-navbar {
+    max-width: 194px;
+    max-height: 54px;
+}
+.navbar-container {
+    padding: 5% 15%; 
+    max-width: 100%; 
+    box-sizing: border-box; 
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-container {
+        padding: 2% 5%; 
+    }
+}

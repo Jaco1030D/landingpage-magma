@@ -1,0 +1,11 @@
+.footer {
+    gap: 70px;
+}
+.texts-footer {
+    width: 800px;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}

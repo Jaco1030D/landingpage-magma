@@ -7,9 +7,7 @@ import Button from '../../others/Button'
 const SectorsActivity = () => {
   return (
     <div className='section'>
-      <center>
-        <h2>{SectorsActivityText.title}</h2>
-      </center>
+      <h2>{SectorsActivityText.title}</h2>
       <div className="content content-sectorsactivity">
         {SectorsActivityText.sector.map((item, index) => (
           <SectorsActivityContainer key={index} item={item} />

@@ -112,20 +112,54 @@ export const FeedbackText = {
     description: 'Cada tradução passa por uma revisão minuciosa e validação tanto pela nossa equipe de editores externos profissionais quanto pelos nossos especialistas internos em idiomas.',
     card: [
         {
+            icon: img.Elisabeth,
             name: 'Elisabeth',
             company: 'Anton Paar',
             description: 'Na Magma Translation, encontramos profissionalismo e precisão em cada projeto. Anton Paar agradece pela parceria e recomenda seus excelentes serviços de tradução.'
         },
         {
+            icon: img.Ricardo,
             name: 'Ricardo',
             company: 'Museu do amanhã',
             description: 'A Magma Translation tem sido uma aliada inestimável na nossa missão de difundir conhecimento. O Museu do Amanhã agradece pela excelência e dedicação em cada tradução.'
         },
         {
+            icon: img.Marcelo,
             name: 'Marcelo',
             company: 'Ambev',
             description: 'Com a expertise da Magma Translation, a Ambev elevou sua comunicação global a novos patamares. Valorizamos e recomendamos seus impecáveis serviços de tradução.'
         }
+    ]
+}
+
+export const TranslationText = {
+    title: 'O que você pode traduzir?',
+    description: 'Nossos tradutores proficientes têm a capacidade de traduzir qualquer tipo de documento, com suporte aos tipos de arquivo abaixo mencionados.',
+    documentsType: [
+        {
+            icon: img.PDF,
+            name: 'Documentos'
+        },
+        {
+            icon: img.Goal,
+            name: 'Marketing e Anúncios'
+        },
+        {
+            icon: img.Website,
+            name: 'Website & Apps'
+        },
+        {
+            icon: img.VideoCamera,
+            name: 'Vídeos'
+        },
+        {
+            icon: img.Ecommerce,
+            name: 'Descrições de produtos'
+        },
+        {
+            icon: img.Bio,
+            name: 'Artigos e muito mais'
+        },
     ]
 }
 

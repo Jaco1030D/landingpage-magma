@@ -1,2 +1,7 @@
 export { default as Partnerships} from './layout/Partnerships'
 export { default as SectorsActivity} from './layout/SectorsActivity'
+export { default as Navbar} from './layout/Navbar'
+export { default as QuotationService} from './layout/QuotationService'
+export { default as Feedback} from './layout/Feedback'
+export { default as Translation} from './layout/Translation'
+export { default as Footer} from './layout/Footer'
