@@ -20,7 +20,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
                 <span>Avançar</span>
               </button>
             ) : (
-              <button type="button" onClick={handleSubmit}>
+              <button type="submit" onClick={handleSubmit}>
                 <span>Enviar</span>
               </button>
             )}
