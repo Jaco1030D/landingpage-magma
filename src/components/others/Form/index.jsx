@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -21,44 +21,48 @@ const Form = ({data, setData, texts}) => {
     <Archive inputs={inputs.step2} data={data} setData={setData} />,
     <PersonalInfos inputs={inputs.step3} data={data} setData={updateFieldHandler} />
   ]
-  const { currentStep } = useForm(formComponents);
+  const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
-  const handleSubmit = (event) => {
+  const formRef = useRef(null)
 
-    
-    // Get the email input value
-    const email = event.target.elements['E-mail'].value.toLowerCase(); // Convert to lowercase for case insensitivity
-    
-    // Check if the email contains "hotmail," "gmail," or "yahoo"
-    if (email.includes('hotmail') || email.includes('gmail') || email.includes('yahoo')) {
-      // Redirect to "/obrigadodois" for the specified email domains
-      window.location.href = "/um-obrigado-da-magma";
-    } else {
-      // Redirect to "/obrigado" for other email domains
-      window.location.href = "/obrigado";
-    }
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const formElement = formRef.current;
+
+    // Envia o formulário manualmente
+    formElement.submit();
+  }
 
   return (
     <div className='form-container'>
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form  name="contato-brasil" action="/obrigado" method="post"  data-netlify="true" onSubmit={handleSubmit}>
+      <form name="contato" method='POST' netlify  ref={formRef} >
+        <input type="hidden" name="form-name" value="contato-brasil" />
 
-            <input type="hidden" name="form-name" value="contato-brasil" />
+        <h2>{texts.formSteps.title}</h2>
+        <div className="inputs-container">
 
-              <input required type="text" className="nome" name="Nome" placeholder="Seu Nome"    />
+          {currentComponent}
+        </div>
+        <div className="actions">
+            <button type="button" onClick={() => changeStep(currentStep - 1)}>
+              <span>Voltar</span>
+            </button>
 
-              <input required type="text" className="cargo" name="Cargo" placeholder="Seu Cargo"  />
-
-              <input required type="email" className="e-mail" name="E-mail" placeholder="Seu E-mail"   />
-
-              <textarea name="Messagem" placeholder="Deixe sua mensagem" className="mensagem" cols="30" rows="10"></textarea>
-          
-              <button type="submit"  className="botaoenviar" >Enviar</button>
-
-            </form>
+            {!isLastStep ? (
+              <button type="submit">
+                <span>Avançar</span>
+              </button>
+            ) : (
+              <button type="button" onClick={handleSubmit}>
+                <span>Enviar</span>
+              </button>
+            )}
+          </div>
+      </form>
       </div>
     </div>
   )
