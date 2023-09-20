@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -6,7 +6,7 @@ import { useForm } from '../../../hooks/useForm'
 import Steps from '../Steps'
 import './style.css'
 
-const Form = ({data, setData, texts, handleSubmit}) => {
+const Form = ({data, setData, texts}) => {
 
   const inputs = texts.formSteps.inputs
 
@@ -22,6 +22,14 @@ const Form = ({data, setData, texts, handleSubmit}) => {
     <PersonalInfos inputs={inputs.step3} data={data} setData={updateFieldHandler} />
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
+
+  const formRef = useRef(null)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    formRef.current.submit()
+  }
 
   return (
     <div className='form-container'>
