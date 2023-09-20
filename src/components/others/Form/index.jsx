@@ -39,31 +39,21 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={(e) => changeStep(currentStep + 1, e)} name="contato-brasil" method='post' data-netlify="true"  data-netlify-honeypot="bot-field" ref={formRef} >
-        
-      <input type="hidden" name="form-name" value="contato-brasil" />
+      <form  name="contato-brasil" action="/obrigado" method="post"  data-netlify="true" onSubmit={handleSubmit}>
 
-        <h2>{texts.formSteps.title}</h2>
-        <div className="inputs-container">
+            <input type="hidden" name="form-name" value="contato-brasil" />
 
-          {currentComponent}
-        </div>
-        <div className="actions">
-            <button type="button" onClick={() => changeStep(currentStep - 1)}>
-              <span>Voltar</span>
-            </button>
+              <input required type="text" className="nome" name="Nome" placeholder="Seu Nome"    />
 
-            {!isLastStep ? (
-              <button type="submit">
-                <span>Avançar</span>
-              </button>
-            ) : (
-              <button type="button" onClick={handleSubmit}>
-                <span>Enviar</span>
-              </button>
-            )}
-          </div>
-      </form>
+              <input required type="text" className="cargo" name="Cargo" placeholder="Seu Cargo"  />
+
+              <input required type="email" className="e-mail" name="E-mail" placeholder="Seu E-mail"   />
+
+              <textarea name="Messagem" placeholder="Deixe sua mensagem" className="mensagem" cols="30" rows="10"></textarea>
+          
+              <button type="submit"  className="botaoenviar" >Enviar</button>
+
+            </form>
       </div>
     </div>
   )
