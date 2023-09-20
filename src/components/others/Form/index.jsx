@@ -6,6 +6,17 @@ import { useForm } from '../../../hooks/useForm'
 import Steps from '../Steps'
 import './style.css'
 
+const formTemplate = {
+  name: "",
+  office: "",
+  email: "",
+  archive: [],
+  typeContent: "",
+  sourceLanguage: "",
+  languageForTradution: "",
+};
+
+
 const Form = ({data, setData, texts}) => {
 
   const inputs = texts.formSteps.inputs
@@ -26,7 +37,9 @@ const Form = ({data, setData, texts}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    
+    setData(formTemplate)
+
+    changeStep(0, e)
   }
 
   return (
@@ -34,7 +47,7 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={(e) => changeStep(currentStep + 1, e)} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" >
+      <form onSubmit={(e) => changeStep(currentStep + 1, e)} method="post" data-netlify="true" >
 
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
