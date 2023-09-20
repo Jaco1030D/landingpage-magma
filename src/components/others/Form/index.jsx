@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -21,12 +21,17 @@ const Form = ({data, setData, texts}) => {
     <Archive inputs={inputs.step2} data={data} setData={setData} />,
     <PersonalInfos inputs={inputs.step3} data={data} setData={updateFieldHandler} />
   ]
-  const { currentStep } = useForm(formComponents);
+  const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
-
+  const formRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    const formElement = formRef.current;
+
+    // Envia o formulário manualmente
+    formElement.submit();
   }
 
   return (
@@ -34,27 +39,29 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={handleSubmit} data-netlify="true">
-      <label htmlFor="name">Nome:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value="jhbnfjmcjcxj"
-        required
-      />
+      <form name="contato" method='POST' netlify >
 
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        value="olajnnjfsnjfnd"
-        required
-      />
+        <h2>{texts.formSteps.title}</h2>
+        <div className="inputs-container">
 
-      <button type="submit">Enviar</button>
-    </form>
+          {currentComponent}
+        </div>
+        <div className="actions">
+            <button type="button" onClick={() => changeStep(currentStep - 1)}>
+              <span>Voltar</span>
+            </button>
+
+            {!isLastStep ? (
+              <button type="submit">
+                <span>Avançar</span>
+              </button>
+            ) : (
+              <button type="button" onClick={handleSubmit}>
+                <span>Enviar</span>
+              </button>
+            )}
+          </div>
+      </form>
       </div>
     </div>
   )
