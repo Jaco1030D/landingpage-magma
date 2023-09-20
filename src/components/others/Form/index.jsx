@@ -39,7 +39,7 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={(e) => changeStep(currentStep + 1, e)} name="contato-brasil" method='POST' data-netlify="true" ref={formRef} >
+      <form onSubmit={(e) => changeStep(currentStep + 1, e)} name="contato-brasil" method='post' data-netlify="true"  data-netlify-honeypot="bot-field" ref={formRef} >
         
       <input type="hidden" name="form-name" value="contato-brasil" />
 
