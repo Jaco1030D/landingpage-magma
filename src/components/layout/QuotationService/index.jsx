@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Form from '../../others/Form'
 import { QuotationServiceText } from '../../../constants'
-import { useSendQuotation } from '../../../hooks/useSendQuotation';
 
 const formTemplate = {
   name: "",
@@ -17,7 +16,6 @@ const QuotationService = () => {
   const [data, setData] = useState(formTemplate);
 
 
-  const { send } = useSendQuotation()
 
   const handleSubmit = (e) => {
     e.preventDefault()
