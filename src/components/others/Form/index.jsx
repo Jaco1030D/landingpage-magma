@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -23,16 +23,21 @@ const Form = ({data, setData, texts}) => {
   ]
   const { currentStep } = useForm(formComponents);
 
-  const formRef = useRef(null)
+  const handleSubmit = (event) => {
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    const formElement = formRef.current;
-
-    // Envia o formulário manualmente
-    formElement.submit();
-  }
+    
+    // Get the email input value
+    const email = event.target.elements['E-mail'].value.toLowerCase(); // Convert to lowercase for case insensitivity
+    
+    // Check if the email contains "hotmail," "gmail," or "yahoo"
+    if (email.includes('hotmail') || email.includes('gmail') || email.includes('yahoo')) {
+      // Redirect to "/obrigadodois" for the specified email domains
+      window.location.href = "/um-obrigado-da-magma";
+    } else {
+      // Redirect to "/obrigado" for other email domains
+      window.location.href = "/obrigado";
+    }
+  };
 
   return (
     <div className='form-container'>
