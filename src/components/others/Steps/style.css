@@ -1,0 +1,47 @@
+ul.progress-bar {
+    height: 250px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  ul.progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 13px;
+    background: black;
+    width: 3px;
+    height: 100vh;
+  }
+  ul.progress-bar li {
+    background: #2B0BEF;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    position: relative;
+  }
+  ul.progress-bar li p {
+    padding-left: 40px;
+    padding-top: 8px;
+    width: 300px;
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+  }
+  ul.progress-bar li.stop ~ li {
+    background: white;
+    border: 1px solid ;
+  }
+  ul.progress-bar li.stop ~ li::after {
+    height: 0;
+  }

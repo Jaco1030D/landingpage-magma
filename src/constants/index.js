@@ -1,5 +1,29 @@
 import * as img from './img'
 
+export const languages = [
+    { value: "pt", text: "Português" },
+    { value: "en", text: "Inglês" },
+    { value: "es", text: "Espanhol" },
+    { value: "fr", text: "Francês" },
+    { value: "de", text: "Alemão" },
+    { value: "it", text: "Italiano" },
+    { value: "nl", text: "Holandês" },
+    { value: "ru", text: "Russo" },
+    { value: "ja", text: "Japonês" },
+    { value: "zh", text: "Chinês (Simplificado)" },
+    { value: "ar", text: "Árabe" },
+    { value: "hi", text: "Hindi" },
+    { value: "ko", text: "Coreano" },
+    { value: "tr", text: "Turco" },
+    { value: "sv", text: "Sueco" },
+    { value: "pl", text: "Polonês" },
+    { value: "vi", text: "Vietnamita" },
+    { value: "th", text: "Tailandês" },
+    { value: "el", text: "Grego" },
+    { value: "da", text: "Dinamarquês" }
+  ];
+  
+
 export const QuotationServiceText = {
     title: 'Serviço de Tradução Técnica',
     progressIndicator: [
@@ -9,25 +33,24 @@ export const QuotationServiceText = {
     ],
     formSteps: {
         title: 'Cotação Rápida',
-        inputs: [
-            {
-                step1: [
-                    'Do que se trata o seu conteudo',
-                    'Idioma da origem',
-                    'Idioma para tradução',
-                ],
-                step2: [
-                    'Adicione aqui seus arquivos',
-                    'Adicione aqui seus arquivos',
-                    'Adicione aqui seus arquivos',
-                ],
-                step3: [
-                    'Seu Nome',
-                    'Seu Cargo',
-                    'Seu E-mail',
-                ],
-            }
-        ] 
+        inputs: {
+                    step1: [
+                        'Do que se trata o seu conteudo',
+                        'Idioma da origem',
+                        'Idioma para tradução',
+                    ],
+                    step2: [
+                        'Adicione aqui seus arquivos',
+                        'Adicione aqui seus arquivos',
+                        'Adicione aqui seus arquivos',
+                    ],
+                    step3: [
+                        'Seu Nome',
+                        'Seu Cargo',
+                        'Seu E-mail',
+                    ],
+                }
+        
     }
 }
 
