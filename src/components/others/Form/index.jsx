@@ -68,7 +68,7 @@ const Form = ({data, setData, texts}) => {
           </div>
         </div>
         <div className="actions">
-        <div data-netlify-recaptcha="false" ></div>
+        <div data-netlify-recaptcha="true" ></div>
             <button type="button" onClick={() => changeStep(currentStep - 1)}>
               <span>Voltar</span>
             </button>
