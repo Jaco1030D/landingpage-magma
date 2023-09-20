@@ -39,7 +39,7 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={(e) => changeStep(currentStep + 1, e)} netlify ref={formRef} >
+      <form onSubmit={(e) => changeStep(currentStep + 1, e)} netlify method='POST' ref={formRef} >
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
           {currentComponent}
