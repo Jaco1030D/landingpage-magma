@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -23,7 +23,7 @@ const Form = ({data, setData, texts}) => {
   ]
   const { currentStep } = useForm(formComponents);
 
-  const formRef = useRef(null)
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
