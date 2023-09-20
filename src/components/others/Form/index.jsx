@@ -47,7 +47,7 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form name='cotação' data-netlify="true" >
+      <form name='cotacao' data-netlify="true" >
 
         <h2>{texts.formSteps.title}</h2>
           <div className="inputs-container">
