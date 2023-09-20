@@ -21,7 +21,7 @@ const Form = ({data, setData, texts}) => {
     <Archive inputs={inputs.step2} data={data} setData={setData} />,
     <PersonalInfos inputs={inputs.step3} data={data} setData={updateFieldHandler} />
   ]
-  const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
+  const { currentStep } = useForm(formComponents);
 
   const formRef = useRef(null)
 
