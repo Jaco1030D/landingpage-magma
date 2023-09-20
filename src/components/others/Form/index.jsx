@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -23,15 +23,10 @@ const Form = ({data, setData, texts}) => {
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
-  const formRef = useRef(null)
-
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const formElement = formRef.current;
-
-    // Envia o formulário manualmente
-    formElement.submit();
+    
   }
 
   return (
@@ -39,7 +34,7 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form name="contato" method='POST' netlify >
+      <form onSubmit={(e) => changeStep(currentStep + 1, e)} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" >
 
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
