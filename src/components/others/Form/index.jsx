@@ -32,7 +32,7 @@ const Form = ({data, setData, texts}) => {
     <Archive inputs={inputs.step2} data={data} setData={setData} />,
     <PersonalInfos inputs={inputs.step3} data={data} setData={updateFieldHandler} />
   ]
-  const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
+  const { currentStep, changeStep, isLastStep } = useForm(formComponents);
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -47,12 +47,25 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={(e) => changeStep(currentStep + 1, e)} method="post" data-netlify="true" >
+      <form name='cotação' data-netlify="true" >
 
         <h2>{texts.formSteps.title}</h2>
-        <div className="inputs-container">
+          <div className="inputs-container">
 
-          {currentComponent}
+          <div className='input-steps-content'>
+              <div className="input">
+                  <label htmlFor="">Do que se trata o seu conteudo</label> <br />
+                  <input type="text" name='conteudo' placeholder='Tipo de conteudo: pdf, img ...' value={data.typeContent} onChange={(e) => setData('typeContent', e.target.value)} />
+              </div>
+              <div className="input">
+                  <label htmlFor="">Idioma da origem</label> <br />
+                  <input type="text" name='origem' placeholder='Qual é o idioma do documento?' value={data.sourceLanguage} onChange={(e) => setData('sourceLanguage', e.target.value)} />
+              </div>
+              <div className="input">
+                  <label htmlFor="">Idioma para tradução</label> <br />
+                  <input type="text" name='traducao' placeholder='Idimo para qual vocÊ quer traduzir' value={data.languageForTradution} onChange={(e) => setData('languageForTradution', e.target.value)} />
+              </div>
+          </div>
         </div>
         <div className="actions">
         <div data-netlify-recaptcha="false" ></div>
