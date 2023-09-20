@@ -27,8 +27,11 @@ const Form = ({data, setData, texts}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
-    formRef.current.submit()
+
+    const formElement = formRef.current;
+
+    // Envia o formulário manualmente
+    formElement.submit();
   }
 
   return (
@@ -36,7 +39,7 @@ const Form = ({data, setData, texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <form onSubmit={(e) => changeStep(currentStep + 1, e)} data-netlify="true" >
+      <form onSubmit={(e) => changeStep(currentStep + 1, e)} data-netlify="true" ref={formRef} >
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
           {currentComponent}
