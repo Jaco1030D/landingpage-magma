@@ -11,9 +11,6 @@ const formTemplate = {
   typeArchive: '',
   origin: '',
   translation: '',
-  archive1: '',
-  archive2: '',
-  archive3: '',
   name: '',
   office: '',
   email: ''
@@ -32,8 +29,8 @@ const Form = ({ texts}) => {
 
   const formComponents = [
     <ArchiveType inputs={inputs.step1} data={data} updateFieldHandler={updateFieldHandler} />,
-    <Archive inputs={inputs.step2} />,
-    <PersonalInfos inputs={inputs.step3} data={data} />
+    <PersonalInfos inputs={inputs.step3} data={data} updateFieldHandler={updateFieldHandler} />,
+    <Archive inputs={inputs.step2} data={data} updateFieldHandler={updateFieldHandler} />,
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
