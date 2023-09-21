@@ -1,9 +1,10 @@
 import React from 'react'
 
 const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastStep, handleSubmit}) => {
-  return (
-    <form onSubmit={(e) => changeStep(currentStep + 1, e)} name='cotação' data-netlify="true" >
 
+  return (
+    <form name='Quotation' action='/Quotation' method='post' >
+        <input type='hidden' name='form-name' value="Quotation" />
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
 
@@ -15,7 +16,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
             </button>
 
             {!isLastStep ? (
-              <button type="submit">
+              <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
                 <span>Avançar</span>
               </button>
             ) : (

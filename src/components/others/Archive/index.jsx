@@ -1,19 +1,11 @@
 import React from 'react'
 
-const Archive = ({inputs, data, setData}) => {
-  const handleFileChange = (e) => {
-    const files = e.target.files;
-
-    const fileList = Array.from(files);
-
-    setData((prevState) => ({
-      ...prevState,
-      archive: fileList,
-    }));
-  }
+const Archive = () => {
   return (
     <div className='input-steps-content'>
-                <input type="file" name='archive' onChange={handleFileChange} />
+      <input type="file" name='archive1'/>
+      <input type="file" name='archive2'/>
+      <input type="file" name='archive3'/>
     </div>
   )
 }
