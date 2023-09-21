@@ -42,7 +42,6 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
   return (
     
     <form name='Quotation' action='/Quotation' method='post' id='myForm' style={divStyle} enctype="multipart/form-data">
-        <input type='hidden' name='form-name' value="Quotation" />
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
 

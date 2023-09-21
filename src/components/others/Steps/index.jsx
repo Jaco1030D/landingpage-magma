@@ -9,10 +9,10 @@ const Steps = ({ currentStep }) => {
         <p>Selecione o Idioma</p>
       </li>
       <li className={currentStep === 1 ? 'stop' : ''}>
-        <p>Envie os Arquivos</p>
+        <p>Adicione Informações</p>
       </li>
       <li >
-        <p>Adicione Informações</p>
+        <p>Envie os Arquivos</p>
       </li>
     </ul>
     </div>

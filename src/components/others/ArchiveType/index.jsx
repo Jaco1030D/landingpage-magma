@@ -13,7 +13,7 @@ const ArchiveType = ({data, updateFieldHandler}) => {
         </div>
         <div className="input">
             <label htmlFor="">Idioma para tradução</label> <br />
-            <input type="text" name='tradução' value={data.translation || ""} onChange={(e) => updateFieldHandler("translation", e.target.value)} placeholder='Idimo para qual vocÊ quer traduzir' required/>
+            <input type="text" name='tradução' value={data.translation || ""} onChange={(e) => updateFieldHandler("translation", e.target.value)} placeholder='Idimo para qual você quer traduzir' required/>
         </div>
     </div>
   )

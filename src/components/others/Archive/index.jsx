@@ -3,6 +3,7 @@ import React from 'react'
 const Archive = ({data, updateFieldHandler}) => {
   return (
     <div className='input-steps-content'>
+      <input type='hidden' name='form-name' value="Quotation" />
       <div className="input display-none">
             <label htmlFor="">Do que se trata o seu conteudo</label> <br />
             <input type="text" name='conteudo' value={data.typeArchive} placeholder='Tipo de conteudo: pdf, img ...' required/>
@@ -30,11 +31,11 @@ const Archive = ({data, updateFieldHandler}) => {
         </div>
       <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
-            <input type="file" name='archive2' required/>
+            <input type="file" name='archive2'/>
         </div>
       <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
-            <input type="file" name='archive3' required/>
+            <input type="file" name='archive3'/>
         </div>
     </div>
   )
