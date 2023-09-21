@@ -5,15 +5,15 @@ const PersonalInfos = ({inputs}) => {
     <div className='input-steps-content'>
         <div className="input">
             <label htmlFor="">{inputs[0]}</label> <br />
-            <input type="text" name='name' placeholder='Tipo de conteudo: pdf, img ...' />
+            <input type="text" name='name' placeholder='Tipo de conteudo: pdf, img ...' required/>
         </div>
         <div className="input">
             <label htmlFor="">{inputs[1]}</label> <br />
-            <input type="text" name='office' placeholder='Qual é o idioma do documento?' />
+            <input type="text" name='office' placeholder='Qual é o idioma do documento?' required/>
         </div>
         <div className="input">
             <label htmlFor="">{inputs[2]}</label> <br />
-            <input type="email" name='email' placeholder='Idimo para qual vocÊ quer traduzir' />
+            <input type="email" name='email' placeholder='Idimo para qual vocÊ quer traduzir' required/>
         </div>
     </div>
   )
