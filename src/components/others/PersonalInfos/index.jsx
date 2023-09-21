@@ -17,15 +17,15 @@ const PersonalInfos = ({inputs, data}) => {
         </div>
         <div className="input file display-none">
             <label htmlFor="">Adicione seus arquivos</label> <br />
-            <input type="file" name='archive1' required/>
+            <input type="file" name='archive1'/>
         </div>
       <div className="input file display-none">
             <label htmlFor="">Adicione seus arquivos</label> <br />
-            <input type="file" name='archive2' required/>
+            <input type="file" name='archive2'/>
         </div>
       <div className="input file display-none">
             <label htmlFor="">Adicione seus arquivos</label> <br />
-            <input type="file" name='archive3' required/>
+            <input type="file" name='archive3'/>
         </div>
         <div className="input">
             <label htmlFor="">{inputs[0]}</label> <br />
