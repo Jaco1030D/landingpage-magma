@@ -27,6 +27,10 @@ label {
     justify-content: center;
 }
 
+.finally {
+    margin-top: 20px;
+}
+
 .form {
     display: flex;
     flex-direction: column;

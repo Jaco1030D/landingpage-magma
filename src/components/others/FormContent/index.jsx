@@ -48,21 +48,24 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
 
           {currentComponent}
         </div>
-        <div className="actions">
-            <button type="button" onClick={() => changeStep(currentStep - 1)}>
-              <span>Voltar</span>
-            </button>
+        {!isLastStep && (
+          <div className="actions">
+          <button type="button" onClick={() => changeStep(currentStep - 1)}>
+            <span>Voltar</span>
+          </button>
 
-            {!isLastStep ? (
-              <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
-                <span>Avançar</span>
-              </button>
-            ) : (
-              <button type="submit" onClick={handleSubmit}>
-                <span>Enviar</span>
-              </button>
-            )}
-          </div>
+          {!isLastStep ? (
+            <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
+              <span>Avançar</span>
+            </button>
+          ) : (
+            <button type="submit" onClick={handleSubmit}>
+              <span>Enviar</span>
+            </button>
+          )}
+        </div>
+        )}
+        
       {/* </form> */}
       </div>
   )

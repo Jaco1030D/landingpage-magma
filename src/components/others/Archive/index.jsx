@@ -39,7 +39,11 @@ const Archive = ({data, updateFieldHandler}) => {
             <input type="file" name='archive3'/>
         </div>
     </div>
-
+    <div className="actions finally">
+    <button type="submit">
+      <span>Enviar</span>
+    </button>
+    </div>
     </form>
     
   )
