@@ -13,3 +13,14 @@
     color: #fff;
     font-size: 20px;
 }
+
+#close {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: transparent;
+}
