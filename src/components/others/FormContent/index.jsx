@@ -6,35 +6,31 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
     position: 'relative',
   });
 
-  // UseEffect para adicionar um ouvinte de evento durante a montagem do componente
   useEffect(() => {
-    // Obtém a posição original da div quando o componente é montado
     const div = document.getElementById('myForm');
     if (div) {
       setOriginalPosition(div.offsetTop);
     }
 
-    // Função para atualizar o estilo da div com base na posição de rolagem
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       if (scrollTop > originalPosition) {
-        // Quando a posição de rolagem for maior que a posição original, fixe a div.
         setDivStyle({
           position: 'fixed',
           top: '0',
+          width: '400px',
+          padding: '25px',
+          borderRadius: '15px',
+          height: '400px'
         });
       } else {
-        // Caso contrário, volte à posição relativa.
         setDivStyle({
           position: 'relative',
         });
       }
     };
 
-    // Adiciona o ouvinte de evento durante a montagem
     window.addEventListener('scroll', handleScroll);
-
-    // Remove o ouvinte de evento ao desmontar o componente
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

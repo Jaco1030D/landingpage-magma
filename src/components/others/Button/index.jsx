@@ -4,7 +4,9 @@ import './style.css'
 
 const Button = () => {
   return (
-    <button id='btn'>Entre em contato</button>
+    <button id='btn'>
+      <a href="#quotation-section">Entre em contato</a>
+    </button>
   )
 }
 

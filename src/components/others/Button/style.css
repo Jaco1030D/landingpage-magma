@@ -2,10 +2,14 @@
     border-radius: 13px;
     width: 335px;
     height: 55px;
-    font-size: 20px;
     background-color: #0637A8;
     color: #fff;
     border: none;
     cursor: pointer;
     margin-top: 80px;
+}
+
+#btn a {
+    color: #fff;
+    font-size: 20px;
 }

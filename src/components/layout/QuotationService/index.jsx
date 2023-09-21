@@ -5,10 +5,10 @@ import { QuotationServiceText } from '../../../constants'
 const QuotationService = () => {
 
   return (
-    <div className='section' id='quotation-section'>
+    <section className='section' id='quotation-section'>
       <h1>{QuotationServiceText.title}</h1>
       <Form texts={QuotationServiceText} />
-    </div>
+    </section>
   )
 }
 
