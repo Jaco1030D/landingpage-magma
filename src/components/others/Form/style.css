@@ -21,7 +21,7 @@ label {
 .steps,
 form {
     width: 350px;
-    height: 300px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +31,9 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #F2F5F7;
+    z-index: 1;
+    right: 0;
 }
 
 .vertical-line {
@@ -85,4 +88,8 @@ input{
 
 .section#quotation-section h1 {
     font-size: 59.83px;
+}
+
+.input.file input {
+    padding-top: 8px;
 }

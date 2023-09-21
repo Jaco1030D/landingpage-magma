@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ArchiveType from '../ArchiveType'
 import Archive from '../Archive'
 import PersonalInfos from '../PersonalInfos'
@@ -11,10 +11,10 @@ import FormContent from '../FormContent'
 const Form = ({ texts}) => {
 
   const inputs = texts.formSteps.inputs
-
+  const [data] = useState("seila meu")
 
   const formComponents = [
-    <ArchiveType inputs={inputs.step1} />,
+    <ArchiveType inputs={inputs.step1} data={data} />,
     <Archive inputs={inputs.step2} />,
     <PersonalInfos inputs={inputs.step3} />
   ]
