@@ -2,8 +2,9 @@ import React from 'react'
 
 const Archive = ({data, updateFieldHandler}) => {
   return (
-    <div className='input-steps-content'>
+    <form name='Quotation' action='/Quotation' method='post' id='myForm' enctype="multipart/form-data">
       <input type='hidden' name='form-name' value="Quotation" />
+      <div className='input-steps-content'>
       <div className="input display-none">
             <label htmlFor="">Do que se trata o seu conteudo</label> <br />
             <input type="text" name='conteudo' value={data.typeArchive} placeholder='Tipo de conteudo: pdf, img ...' required/>
@@ -38,6 +39,9 @@ const Archive = ({data, updateFieldHandler}) => {
             <input type="file" name='archive3'/>
         </div>
     </div>
+
+    </form>
+    
   )
 }
 

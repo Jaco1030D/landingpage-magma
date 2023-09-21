@@ -19,7 +19,7 @@ label {
 }
 
 .steps,
-form {
+.form {
     width: 350px;
     height: 350px;
     display: flex;
@@ -27,7 +27,7 @@ form {
     justify-content: center;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 20px;
