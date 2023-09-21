@@ -14,11 +14,23 @@
     <title>Magma Translation</title>
   </head>
   <body>
-    <form name='Quotation' netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input required name='conteudo' type="text">
-      <input required name="origem" type="text">
-      <input required name="tradução" type="text">
-    </form>
+    <form name="contato-brasil"  action="/"  netlify netlify-honeypot="bot-field" data-netlify="true" hidden>
+
+      <input required type="text" className="nome" name="Nome" placeholder="Seu Nome"    />
+
+      <input required type="text" className="cargo" name="Cargo" placeholder="Seu Cargo"  />
+
+      <input required type="email" className="e-mail" name="E-mail" placeholder="Seu E-mail"   />
+
+      <textarea name="Messagem" placeholder="Deixe sua mensagem" className="mensagem" cols="30" rows="10"></textarea>
+
+      <input className="escondendo-file" name="file" type="file"  />
+
+
+      <select className="cotacao" name="selectedFruit"></select>
+  
+      <button  className="botaoenviar" >Enviar</button>
+      </form>
     <div id="root"></div>
     
   </body>

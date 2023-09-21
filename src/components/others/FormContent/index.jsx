@@ -14,7 +14,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
               <span>Voltar</span>
             </button>
 
-            { 1 === 2 ? (
+            {!isLastStep ? (
               <button type="submit">
                 <span>Avançar</span>
               </button>
