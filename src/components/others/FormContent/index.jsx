@@ -49,9 +49,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
     };
   }, [originalPosition, close]);
   return (
-    
-    // <form name='Quotation' action='/Quotation' method='post' id='myForm' style={divStyle} enctype="multipart/form-data">
-      <div className='form' id='myForm' style={divStyle}>
+    <div className='form' id='myForm' style={divStyle}>
         <h2>{texts.formSteps.title}</h2>
         <button id='close' style={{display: !closeButton && 'none'}} onClick={handleClose}>x</button>
         <div className="inputs-container">
@@ -63,20 +61,11 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
           <button type="button" onClick={() => changeStep(currentStep - 1)}>
             <span>Voltar</span>
           </button>
-
-          {!isLastStep ? (
-            <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
-              <span>Avançar</span>
-            </button>
-          ) : (
-            <button type="submit" onClick={handleSubmit}>
-              <span>Enviar</span>
-            </button>
-          )}
+          <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
+            <span>Avançar</span>
+          </button>
         </div>
         )}
-        
-      {/* </form> */}
       </div>
   )
 }

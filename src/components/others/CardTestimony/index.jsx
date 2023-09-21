@@ -2,6 +2,7 @@ import React from 'react'
 import './style.css'
 
 const CardTestimony = ({item}) => {
+  console.log(item);
   return (
     <div className="card-testimony">
         <div className="person">
@@ -13,6 +14,11 @@ const CardTestimony = ({item}) => {
         </div>
 
         <p className='text-card-testimony'>{item.description}</p>
+        <div className="stars-content">
+        {item.stars.map((item, index) => (
+          <img src={item} key={index} alt='Stars' />
+        ))}
+        </div>
     </div>
   )
 }

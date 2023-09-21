@@ -138,19 +138,40 @@ export const FeedbackText = {
             icon: img.Elisabeth,
             name: 'Elisabeth',
             company: 'Anton Paar',
-            description: 'Na Magma Translation, encontramos profissionalismo e precisão em cada projeto. Anton Paar agradece pela parceria e recomenda seus excelentes serviços de tradução.'
+            description: 'Na Magma Translation, encontramos profissionalismo e precisão em cada projeto. Anton Paar agradece pela parceria e recomenda seus excelentes serviços de tradução.',
+            stars: [
+                img.Star,
+                img.Star,
+                img.Star,
+                img.Star,
+                img.Star
+            ]
         },
         {
             icon: img.Ricardo,
             name: 'Ricardo',
             company: 'Museu do amanhã',
-            description: 'A Magma Translation tem sido uma aliada inestimável na nossa missão de difundir conhecimento. O Museu do Amanhã agradece pela excelência e dedicação em cada tradução.'
+            description: 'A Magma Translation tem sido uma aliada inestimável na nossa missão de difundir conhecimento. O Museu do Amanhã agradece pela excelência e dedicação em cada tradução.',
+            stars: [
+                img.Star,
+                img.Star,
+                img.Star,
+                img.Star,
+                img.Star
+            ]
         },
         {
             icon: img.Marcelo,
             name: 'Marcelo',
             company: 'Ambev',
-            description: 'Com a expertise da Magma Translation, a Ambev elevou sua comunicação global a novos patamares. Valorizamos e recomendamos seus impecáveis serviços de tradução.'
+            description: 'Com a expertise da Magma Translation, a Ambev elevou sua comunicação global a novos patamares. Valorizamos e recomendamos seus impecáveis serviços de tradução.',
+            stars: [
+                img.Star,
+                img.Star,
+                img.Star,
+                img.Star,
+                img.Star
+            ]
         }
     ]
 }
