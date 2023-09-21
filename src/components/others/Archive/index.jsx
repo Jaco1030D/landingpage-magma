@@ -13,12 +13,7 @@ const Archive = ({inputs, data, setData}) => {
   }
   return (
     <div className='input-steps-content'>
-        {inputs.map((item, index) => (
-            <div key={index} className="input">
-                <label htmlFor="">{item}</label> <br />
-                <input type="file" onChange={handleFileChange} />
-            </div>
-        ))}
+                <input type="file" name='archive' onChange={handleFileChange} />
     </div>
   )
 }

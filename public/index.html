@@ -9,28 +9,22 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <style>
+      @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+    </style> -->
     <title>Magma Translation</title>
   </head>
   <body>
-    <form name="contato-brasil"  action="/"  netlify netlify-honeypot="bot-field" data-netlify="true" hidden>
-
-      <input required type="text" className="nome" name="Nome" placeholder="Seu Nome"    />
-
-      <input required type="text" className="cargo" name="Cargo" placeholder="Seu Cargo"  />
-
-      <input required type="email" className="e-mail" name="E-mail" placeholder="Seu E-mail"   />
-
-      <textarea name="Messagem" placeholder="Deixe sua mensagem" className="mensagem" cols="30" rows="10"></textarea>
-
-      <input className="escondendo-file" name="file" type="file"  />
-
-
-      <select className="cotacao" name="selectedFruit"></select>
-  
-      <button  className="botaoenviar" >Enviar</button>
-      </form>
+    <form name='Quotation' style="display: none;" netlify data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input required name='conteudo' type="text">
+      <input required name="origem" type="text">
+      <input required name="tradução" type="text">
+      <input type="file" name="archive">
+      <input required  name="name" type="text">
+      <input required  name="office" type="text">
+      <input required  name="email" type="text">
+      <div data-netlify-recaptcha="true" ></div>
+    </form>
     <div id="root"></div>
     
   </body>
