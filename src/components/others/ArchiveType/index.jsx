@@ -9,11 +9,11 @@ const ArchiveType = ({inputs, data, setData}) => {
         </div>
         <div className="input">
             <label htmlFor="">Idioma da origem</label> <br />
-            <input type="text" placeholder='Qual é o idioma do documento?' value={data.sourceLanguage} onChange={(e) => setData('sourceLanguage', e.target.value)} />
+            <input type="text" name='origem' placeholder='Qual é o idioma do documento?' value={data.sourceLanguage} onChange={(e) => setData('sourceLanguage', e.target.value)} />
         </div>
         <div className="input">
             <label htmlFor="">Idioma para tradução</label> <br />
-            <input type="text" placeholder='Idimo para qual vocÊ quer traduzir' value={data.languageForTradution} onChange={(e) => setData('languageForTradution', e.target.value)} />
+            <input type="text" name='tradução' placeholder='Idimo para qual vocÊ quer traduzir' value={data.languageForTradution} onChange={(e) => setData('languageForTradution', e.target.value)} />
         </div>
     </div>
   )

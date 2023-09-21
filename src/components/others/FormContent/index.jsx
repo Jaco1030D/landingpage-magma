@@ -2,7 +2,7 @@ import React from 'react'
 
 const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastStep, handleSubmit}) => {
   return (
-    <form name='cotação' data-netlify="true" >
+    <form onSubmit={(e) => changeStep(currentStep + 1, e)} name='Quotation' data-netlify="true" >
 
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
@@ -10,12 +10,11 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
           {currentComponent}
         </div>
         <div className="actions">
-        <div data-netlify-recaptcha="false" ></div>
             <button type="button" onClick={() => changeStep(currentStep - 1)}>
               <span>Voltar</span>
             </button>
 
-            {!isLastStep ? (
+            { 1 === 2 ? (
               <button type="submit">
                 <span>Avançar</span>
               </button>

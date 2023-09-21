@@ -1,7 +1,5 @@
 import React from 'react'
 import ArchiveType from '../ArchiveType'
-import Archive from '../Archive'
-import PersonalInfos from '../PersonalInfos'
 import { useForm } from '../../../hooks/useForm'
 import Steps from '../Steps'
 import './style.css'
@@ -30,8 +28,6 @@ const Form = ({data, setData, texts}) => {
 
   const formComponents = [
     <ArchiveType inputs={inputs.step1} data={data} setData={updateFieldHandler} />,
-    <Archive inputs={inputs.step2} data={data} setData={setData} />,
-    <PersonalInfos inputs={inputs.step3} data={data} setData={updateFieldHandler} />
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
