@@ -5,7 +5,7 @@ const ArchiveType = ({data}) => {
     <div className='input-steps-content'>
         <div className="input">
             <label htmlFor="">Do que se trata o seu conteudo</label> <br />
-            <input type="text" name='conteudo' placeholder='Tipo de conteudo: pdf, img ...' value={data | ""} required/>
+            <input type="text" name='conteudo' placeholder='Tipo de conteudo: pdf, img ...' value={"hgfvbnjuhyfvbnm"} required/>
         </div>
         <div className="input">
             <label htmlFor="">Idioma da origem</label> <br />

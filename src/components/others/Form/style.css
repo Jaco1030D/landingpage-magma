@@ -51,6 +51,10 @@ form {
 
 }
 
+.input.display-none {
+    display: none;
+}
+
 .actions {
     width: 100%;
     display: flex;
