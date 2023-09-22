@@ -47,8 +47,8 @@ label {
     .steps{
         display: none;
     }
-    .section#quotation-section {
-        padding: 20px;
+    .form {
+        width: 250px;
     }
 }
 
