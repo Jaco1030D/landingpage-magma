@@ -47,6 +47,9 @@ label {
     .steps{
         display: none;
     }
+    .section#quotation-section {
+        padding: 20px;
+    }
 }
 
 .vertical-line {

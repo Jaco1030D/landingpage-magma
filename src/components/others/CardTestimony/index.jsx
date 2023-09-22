@@ -2,7 +2,6 @@ import React from 'react'
 import './style.css'
 
 const CardTestimony = ({item}) => {
-  console.log(item);
   return (
     <div className="card-testimony">
         <div className="person">

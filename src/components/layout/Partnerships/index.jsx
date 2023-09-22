@@ -1,7 +1,6 @@
 import React from 'react'
 import { PartnershipsText } from '../../../constants'
 import PartnerShipsContainer from '../../others/PartnerShipsContainer'
-import './style.css'
 
 const Partnerships = () => {
   return (
