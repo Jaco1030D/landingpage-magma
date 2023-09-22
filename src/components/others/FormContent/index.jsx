@@ -27,7 +27,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
           setDivStyle({
             position: 'fixed',
             top: '0',
-            width: '400px',
+            width: '300px',
             padding: '25px',
             borderRadius: '15px',
             height: '400px',
