@@ -4,9 +4,11 @@ import SectorsActivityContainer from '../../others/SectorsActivityContainer'
 import './style.css'
 import Button from '../../others/Button'
 
+const MarginTop = "192.8px"
+
 const SectorsActivity = () => {
   return (
-    <div className='section'>
+    <div className='section' style={{marginTop: MarginTop}}>
       <h2>{SectorsActivityText.title}</h2>
       <div className="content content-sectorsactivity">
         {SectorsActivityText.sector.map((item, index) => (

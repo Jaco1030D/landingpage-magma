@@ -25,18 +25,25 @@ a {
     font-size: small;
 }
 .section {
-    padding: 4.5rem 0 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    margin-top: 4rem;
+}
+.section h2 {
+    font-family: Lato;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0.04em;
+    text-align: center;
+
 }
 .section .section-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 83px;
     max-width: 1000px;
 }
 .section p.text-section {

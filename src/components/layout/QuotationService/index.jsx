@@ -6,9 +6,7 @@ const QuotationService = () => {
 
   return (
     <section className='section' id='quotation-section'>
-      <center>
       <h1>{QuotationServiceText.title}</h1>
-      </center>
       <Form texts={QuotationServiceText} />
     </section>
   )

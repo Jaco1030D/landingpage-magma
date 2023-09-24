@@ -5,7 +5,7 @@ import { useForm } from '../../../hooks/useForm'
 import Steps from '../Steps'
 import './style.css'
 import FormContent from '../FormContent'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 const formTemplate = {
   typeArchive: '',
@@ -18,6 +18,7 @@ const formTemplate = {
 
 const Form = ({ texts}) => {
   const [data, setData] = useState(formTemplate);
+  const form = useRef()
 
   const updateFieldHandler = (key, value) => {
     setData((prev) => {
@@ -30,7 +31,7 @@ const Form = ({ texts}) => {
   const formComponents = [
     <ArchiveType inputs={inputs.step1} data={data} updateFieldHandler={updateFieldHandler} />,
     <PersonalInfos inputs={inputs.step3} data={data} updateFieldHandler={updateFieldHandler} />,
-    <Archive inputs={inputs.step2} data={data} updateFieldHandler={updateFieldHandler} />,
+    <Archive inputs={inputs.step2} data={data} updateFieldHandler={updateFieldHandler} ref={form} />,
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
@@ -39,7 +40,7 @@ const Form = ({ texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <FormContent isLastStep={isLastStep} texts={texts} currentComponent={currentComponent} changeStep={changeStep} currentStep={currentStep} />
+      <FormContent isLastStep={isLastStep} ref={form.current} texts={texts} currentComponent={currentComponent} changeStep={changeStep} currentStep={currentStep} />
       </div>
     </div>
   )

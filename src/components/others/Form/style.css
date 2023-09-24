@@ -2,12 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1000px;
+    width: 87%;
     background-color: #F2F5F7;
     border: 2px solid #C8982A;
     border-radius: 91px;
-    padding: 50px;
-    min-height: 400px;
+    min-height: 413px;
 }
 
 .form-container .form-content {
@@ -92,8 +91,9 @@ input{
     background-color: transparent;
 }
 .section#quotation-section{
-    padding-top: 0;
+    padding-top: 42px;
     margin-top: 0;
+    gap: 60px;
 }
 
 .section#quotation-section h1 {

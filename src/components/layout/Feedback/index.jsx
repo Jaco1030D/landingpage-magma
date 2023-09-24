@@ -3,9 +3,11 @@ import { FeedbackText } from '../../../constants'
 import CardTestimony from '../../others/CardTestimony'
 import './style.css'
 
+const MarginTop = '107px';
+
 const Feedback = () => {
   return (
-    <div className="section">
+    <div className="section" style={{marginTop: MarginTop}}>
       <div className="section-text">
         <h2>{FeedbackText.title}</h2>
         <p className='text-section'>{FeedbackText.description}</p>

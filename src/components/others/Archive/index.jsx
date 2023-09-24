@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Archive = ({data, updateFieldHandler}) => {
+const Archive = ({data, updateFieldHandler, ref}) => {
+
   return (
-    <form name='Quotation' action='/Quotation' method='post' id='myForm' enctype="multipart/form-data">
+    <form ref={ref} name='Quotation' action='/Quotation' method='post' id='myForm' enctype="multipart/form-data">
       <input type='hidden' name='form-name' value="Quotation" />
       <div className='input-steps-content'>
       <div className="input display-none">
@@ -38,11 +39,6 @@ const Archive = ({data, updateFieldHandler}) => {
             <label htmlFor="">Adicione seus arquivos</label> <br />
             <input type="file" name='archive3'/>
         </div>
-    </div>
-    <div className="actions finally">
-    <button type="submit">
-      <span>Enviar</span>
-    </button>
     </div>
     </form>
     
