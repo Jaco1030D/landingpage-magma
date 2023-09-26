@@ -64,7 +64,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
             <span>Avançar</span>
           </button>
         ) : (
-          <button form="myForm" type="submit">
+          <button form='myForm' type="submit">
             <span>Enviar</span>
           </button>
         ) }
