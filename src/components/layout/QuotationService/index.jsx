@@ -2,6 +2,8 @@ import React from 'react'
 import Form from '../../others/Form'
 import { QuotationServiceText } from '../../../constants'
 
+import './style.css'
+
 const QuotationService = () => {
 
   return (

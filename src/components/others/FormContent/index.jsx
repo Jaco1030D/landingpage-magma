@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react'
-
-const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastStep, ref}) => {
+import './style.css'
+const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastStep, handleSubmit}) => {
   // const [originalPosition, setOriginalPosition] = useState(0);
   // const [close, setClose] = useState(false)
   // const [closeButton, setCloseButton] = useState(false)
@@ -48,32 +48,28 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
   //     window.removeEventListener('scroll', handleScroll);
   //   };
   // }, [originalPosition, close]);
-  const handleSubmit = () => {
-    ref.submit()
-  }
   return (
-    <form className='form' id='myForm' onSubmit={handleSubmit}>
+    <div className='form' id='myForm'>
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
 
           {currentComponent}
         </div>
-        <div className="actions">
-            <button type="button" onClick={() => changeStep(currentStep - 1)}>
-              <span>Voltar</span>
-            </button>
-
-            {!isLastStep ? (
-              <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
-                <span>Avançar</span>
-              </button>
-            ) : (
-              <button type="submit">
-                <span>Enviar</span>
-              </button>
-            )}
-          </div>
-      </form>
+          <div className="actions">
+          <button type="button" onClick={() => changeStep(currentStep - 1)}>
+            <span>Voltar</span>
+          </button>
+        {!isLastStep ? (
+          <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
+            <span>Avançar</span>
+          </button>
+        ) : (
+          <button form="myForm" type="submit">
+            <span>Enviar</span>
+          </button>
+        ) }
+        </div>
+      </div>
   )
 }
 

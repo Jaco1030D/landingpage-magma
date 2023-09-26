@@ -45,3 +45,12 @@ ul.progress-bar {
   ul.progress-bar li.stop ~ li::after {
     height: 0;
   }
+  .step {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-align: left;
+
+}
