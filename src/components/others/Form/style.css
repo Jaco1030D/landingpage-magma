@@ -40,6 +40,7 @@ label {
 
 .input.file input {
     padding-top: 8px;
+    display: none;
 }
 
 

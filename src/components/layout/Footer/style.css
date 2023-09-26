@@ -2,10 +2,11 @@
     gap: 70px;
 }
 .texts-footer {
-    max-width: 800px;
+    max-width: 68%;
     text-align: center;
     font-size: 18px;
     display: flex;
     flex-direction: column;
     gap: 60px;
+    margin-bottom: 98px;
 }

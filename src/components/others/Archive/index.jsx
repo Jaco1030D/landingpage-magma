@@ -1,4 +1,4 @@
-import React from 'react'
+import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
   return (
@@ -27,17 +27,19 @@ const Archive = ({data, updateFieldHandler}) => {
             <input type="email" name='email' placeholder='Idimo para qual você quer traduzir' value={data.email || ""} required/>
         </div>
       <div className="input file">
-            <label htmlFor="">Adicione seus arquivos</label> <br />
-            <input type="file" name='archive1' />
+            <p>Adicione seus arquivos:</p>
+            <br />
+            <label htmlFor='file'>Adicione seus arquivos</label>
+            <input type="file" id='file' name='archive1' />
         </div>
-      <div className="input file">
+      {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
             <input type="file" name='archive2'/>
         </div>
       <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
             <input type="file" name='archive3'/>
-        </div>
+        </div> */}
     </div>
     </div>
     

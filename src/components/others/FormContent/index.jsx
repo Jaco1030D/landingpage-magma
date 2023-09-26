@@ -55,7 +55,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
 
           {currentComponent}
         </div>
-          <div className="actions">
+        <div className="actions">
           <button type="button" onClick={() => changeStep(currentStep - 1)}>
             <span>Voltar</span>
           </button>

@@ -12,7 +12,10 @@ const Footer = () => {
 
       <div className="texts-footer">
         <p>{FooterText.description}</p>
-        <p>{FooterText.reserved}</p>
+        <p>
+          {FooterText.reserved} <br />
+        <a href="">Termos de serviço</a>
+        </p>
       </div>
     </div>
   )

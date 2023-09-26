@@ -1,0 +1,12 @@
+.input.file label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 195px;
+    border-radius: 6px;
+    border: 1px dashed ;
+}
+
+.input.file label:hover {
+    border: 1px dashed #C8982A;
+}
