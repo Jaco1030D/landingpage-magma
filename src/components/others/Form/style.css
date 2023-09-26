@@ -32,15 +32,6 @@ label {
     margin-top: 20px;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: #F2F5F7;
-    z-index: 1;
-    right: 0;
-}
-
 .vertical-line {
     border-left: 3px solid black;
     height: 350px;

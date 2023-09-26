@@ -3,7 +3,10 @@
     max-height: 54px;
 }
 .navbar-content {
-    width: 744px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .navbar-container {
     padding-top: 41px;
