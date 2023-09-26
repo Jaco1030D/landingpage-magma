@@ -2,7 +2,7 @@ import React from 'react'
 
 const Archive = ({data, updateFieldHandler}) => {
   return (
-    <form name='Quotation' action='/Quotation' method='post' id='myForm' enctype="multipart/form-data">
+    <div>
       <input type='hidden' name='form-name' value="Quotation" />
       <div className='input-steps-content'>
       <div className="input display-none">
@@ -39,7 +39,7 @@ const Archive = ({data, updateFieldHandler}) => {
             <input type="file" name='archive3'/>
         </div>
     </div>
-    </form>
+    </div>
     
   )
 }
