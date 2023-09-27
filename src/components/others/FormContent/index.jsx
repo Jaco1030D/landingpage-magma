@@ -49,7 +49,7 @@ const FormContent = ({texts, data, currentComponent, changeStep, currentStep, is
   //   };
   // }, [originalPosition, close]);
   return (
-    <form name='Quotation' className='form' action='/teste' method='post' id='myForm' encType="multipart/form-data" onSubmit={handleSubmit}>
+    <form name='Quotation' className='form' action='/Quotation' method='post' id='myForm' encType="multipart/form-data" onSubmit={handleSubmit}>
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
 

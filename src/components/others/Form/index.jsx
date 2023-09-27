@@ -6,6 +6,7 @@ import Steps from '../Steps'
 import './style.css'
 import FormContent from '../FormContent'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const formTemplate = {
   typeArchive: '',
@@ -34,8 +35,10 @@ const Form = ({ texts}) => {
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
+  const navigate = useNavigate()
+
   const handleSubmit = () => {
-    window.location.href = "/obrigado";
+    navigate("/obrigado")
   }
 
   return (
