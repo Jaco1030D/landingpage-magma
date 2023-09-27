@@ -1,26 +1,27 @@
 import * as img from './img'
 
 export const languages = [
-    { value: "pt", text: "Português" },
-    { value: "en", text: "Inglês" },
-    { value: "es", text: "Espanhol" },
-    { value: "fr", text: "Francês" },
-    { value: "de", text: "Alemão" },
-    { value: "it", text: "Italiano" },
-    { value: "nl", text: "Holandês" },
-    { value: "ru", text: "Russo" },
-    { value: "ja", text: "Japonês" },
-    { value: "zh", text: "Chinês (Simplificado)" },
-    { value: "ar", text: "Árabe" },
-    { value: "hi", text: "Hindi" },
-    { value: "ko", text: "Coreano" },
-    { value: "tr", text: "Turco" },
-    { value: "sv", text: "Sueco" },
-    { value: "pl", text: "Polonês" },
-    { value: "vi", text: "Vietnamita" },
-    { value: "th", text: "Tailandês" },
-    { value: "el", text: "Grego" },
-    { value: "da", text: "Dinamarquês" }
+    {value: "", label: "Selecione o idioma"},
+    { value: "pt", label: "Português" },
+    { value: "en", label: "Inglês" },
+    { value: "es", label: "Espanhol" },
+    { value: "fr", label: "Francês" },
+    { value: "de", label: "Alemão" },
+    { value: "it", label: "Italiano" },
+    { value: "nl", label: "Holandês" },
+    { value: "ru", label: "Russo" },
+    { value: "ja", label: "Japonês" },
+    { value: "zh", label: "Chinês (Simplificado)" },
+    { value: "ar", label: "Árabe" },
+    { value: "hi", label: "Hindi" },
+    { value: "ko", label: "Coreano" },
+    { value: "tr", label: "Turco" },
+    { value: "sv", label: "Sueco" },
+    { value: "pl", label: "Polonês" },
+    { value: "vi", label: "Vietnamita" },
+    { value: "th", label: "Tailandês" },
+    { value: "el", label: "Grego" },
+    { value: "da", label: "Dinamarquês" }
   ];
   
 

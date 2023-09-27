@@ -19,7 +19,9 @@
     gap: 22px;
 }
 
-input{
+.input > input,
+select,
+.select{
     width: 100%;
     height: 40px;
     outline: none;
@@ -38,4 +40,12 @@ input{
 }
 .input.display-none {
     display: none;
+}
+.rmsc{
+    --rmsc-border: #F2F5F7;
+}
+.rmsc .dropdown-heading {
+    background-color: #F2F5F7;
+    border: 2px solid;
+    border-radius: 10px;
 }

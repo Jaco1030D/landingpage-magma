@@ -1,6 +1,21 @@
+import { useState } from 'react'
 import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
+  const [numArchives, setNumArchives] = useState(0)
+  // const [archives, setArchives] = useState([''])
+  const handleFileChange = (e) => {
+    const count = e.target.files.length;
+    const files = e.target.files
+    let arrayFileName = []
+    console.log(e.target.files);
+    for (let index = 0; index < files.length; index++) {
+      const element = files[index].name;
+      arrayFileName.push(element)
+    }
+    // setArchives(arrayFileName);
+    setNumArchives(count);
+  }
   return (
     <div>
       <input type='hidden' name='form-name' value="Quotation" />
@@ -29,8 +44,11 @@ const Archive = ({data, updateFieldHandler}) => {
       <div className="input file">
             <p>Adicione seus arquivos:</p>
             <br />
-            <label htmlFor='file'>Adicione seus arquivos</label>
-            <input type="file" id='file' name='archive1' />
+            <label htmlFor='file'>Adicione seus arquivos <br />
+            Aquivos adicionados: {numArchives} <br />
+            </label>
+            
+            <input type="file" id='file' name='archive1' onChange={handleFileChange} multiple/>
         </div>
       {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
