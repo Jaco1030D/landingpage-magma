@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
   const [numArchives, setNumArchives] = useState(0)
   // const [archives, setArchives] = useState([''])
+  const input = useRef()
   const handleFileChange = (e) => {
     const count = e.target.files.length;
     const files = e.target.files
     let arrayFileName = []
-    console.log(e.target.files);
     for (let index = 0; index < files.length; index++) {
       const element = files[index].name;
       arrayFileName.push(element)
     }
     // setArchives(arrayFileName);
     setNumArchives(count);
+  }
+  const handleDrop = (e) => {
+    e.preventDefault()
+
   }
   return (
     <div>
@@ -44,11 +48,11 @@ const Archive = ({data, updateFieldHandler}) => {
       <div className="input file">
             <p>Adicione seus arquivos:</p>
             <br />
-            <label htmlFor='file'>Adicione seus arquivos <br />
+            <label onDragOver={(e) => e.preventDefault()} onDrop={handleDrop} htmlFor='file'>Adicione seus arquivos <br />
             Aquivos adicionados: {numArchives} <br />
             </label>
             
-            <input type="file" id='file' name='archive1' onChange={handleFileChange} multiple/>
+            <input ref={input} type="file" id='file' name='archive1' onChange={handleFileChange} multiple/>
         </div>
       {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
