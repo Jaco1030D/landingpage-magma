@@ -49,3 +49,11 @@ select,
     border: 2px solid;
     border-radius: 10px;
 }
+svg.dropdown-heading-dropdown-arrow.gray {
+    display: none;
+}
+#select-origin {
+    appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
