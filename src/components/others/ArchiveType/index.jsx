@@ -8,15 +8,19 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
 
     const handleChangeOrigin = (option) => {
       console.log(option);
-      console.log(option);
       if (selectedOrigin[0]) {
         setSelectedOrigin(prev => {
-          updateFieldHandler("trasnlation", option[1].label)
-          return [option[1]]
+          if (option[1]) {
+            updateFieldHandler("trasnlation", option[1].label)
+            return [option[1]]  
+          } else {
+            updateFieldHandler("trasnlation", [])
+            return []
+          }
         })
       } else {
         setSelectedOrigin(prev => {
-          updateFieldHandler("origin", option[0].label)
+          updateFieldHandler("origin", option[0].label || "")
           return option
         })
       }

@@ -18,7 +18,10 @@ const Archive = ({data, updateFieldHandler}) => {
   }
   const handleDrop = (e) => {
     e.preventDefault()
-
+    if (e.dataTransfer.files.length > 0) {
+      input.current.files = e.dataTransfer.files; 
+      setNumArchives(e.dataTransfer.files.length)
+    }
   }
   return (
     <div>
@@ -45,14 +48,14 @@ const Archive = ({data, updateFieldHandler}) => {
         <div className="input display-none">
             <input type="email" name='email' placeholder='Idimo para qual você quer traduzir' value={data.email || ""} required/>
         </div>
-      <div className="input file">
+      <div className="input file" onDragOver={(e) => e.preventDefault()} onDrop={handleDrop}>
             <p>Adicione seus arquivos:</p>
             <br />
-            <label onDragOver={(e) => e.preventDefault()} onDrop={handleDrop} htmlFor='file'>Adicione seus arquivos <br />
+            <label htmlFor='file'>Adicione seus arquivos <br />
             Aquivos adicionados: {numArchives} <br />
             </label>
             
-            <input ref={input} type="file" id='file' name='archive1' onChange={handleFileChange} multiple/>
+            <input ref={input}  onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive1' onDrop={handleDrop} onChange={handleFileChange} multiple/>
         </div>
       {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />

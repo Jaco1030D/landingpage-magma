@@ -39,7 +39,7 @@ const Form = ({ texts}) => {
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <FormContent isLastStep={isLastStep} texts={texts} currentComponent={currentComponent} changeStep={changeStep} currentStep={currentStep} />
+      <FormContent isLastStep={isLastStep} data={data} texts={texts} currentComponent={currentComponent} changeStep={changeStep} currentStep={currentStep} />
       </div>
     </div>
   )

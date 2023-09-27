@@ -36,7 +36,7 @@ export const QuotationServiceText = {
         title: 'Cotação Rápida',
         inputs: {
                     step1: [
-                        'Do que se trata o seu conteudo',
+                        'Tipo conteudo',
                         'Idioma da origem',
                         'Idioma para tradução',
                     ],
@@ -46,9 +46,9 @@ export const QuotationServiceText = {
                         'Adicione aqui seus arquivos',
                     ],
                     step3: [
-                        'Seu Nome',
+                        'Seu Nome*',
                         'Seu Cargo',
-                        'Seu E-mail',
+                        'Seu E-mail*',
                     ],
                 }
         

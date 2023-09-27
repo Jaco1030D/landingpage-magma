@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from 'react'
 import './style.css'
-const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastStep, handleSubmit}) => {
+const FormContent = ({texts, data, currentComponent, changeStep, currentStep, isLastStep, handleSubmit}) => {
   // const [originalPosition, setOriginalPosition] = useState(0);
   // const [close, setClose] = useState(false)
   // const [closeButton, setCloseButton] = useState(false)
@@ -49,7 +49,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
   //   };
   // }, [originalPosition, close]);
   return (
-    <form name='Quotation' className='form' action='/Quotation' method='post' id='myForm' enctype="multipart/form-data">
+    <form name='Quotation' className='form' action='/Quotation' method='post' id='myForm' encType="multipart/form-data">
         <h2>{texts.formSteps.title}</h2>
         <div className="inputs-container">
 
@@ -60,7 +60,7 @@ const FormContent = ({texts, currentComponent, changeStep, currentStep, isLastSt
             <span>Voltar</span>
           </button>
         {!isLastStep ? (
-          <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
+          <button type="button" disabled={(!data.name || !data.email) && currentStep === 1 ? true : false } onClick={(e) => changeStep(currentStep + 1, e)}>
             <span>Avançar</span>
           </button>
         ) : (
