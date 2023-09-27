@@ -1,20 +1,21 @@
 import React, { useState } from 'react'
-import { languages } from '../../../constants'
+import { languages, typeContent } from '../../../constants'
 import { MultiSelect } from 'react-multi-select-component';
 
 const ArchiveType = ({data, updateFieldHandler, inputs}) => {
     const [selected, setSelected] = useState([]);
     const [selectedOrigin, setSelectedOrigin] = useState([]);
+    const [selectedArchiveType, setSelectedArchiveType] = useState([])
 
     const handleChangeOrigin = (option) => {
       console.log(option);
       if (selectedOrigin[0]) {
         setSelectedOrigin(prev => {
           if (option[1]) {
-            updateFieldHandler("trasnlation", option[1].label)
+            updateFieldHandler("origin", option[1].label)
             return [option[1]]  
           } else {
-            updateFieldHandler("trasnlation", [])
+            updateFieldHandler("origin", [])
             return []
           }
         })
@@ -35,13 +36,40 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
         return options
       })
     }
+    const handleChangeContent = (option) => {
+      console.log(option);
+      if (selectedArchiveType[0]) {
+        setSelectedArchiveType(prev => {
+          if (option[1]) {
+            updateFieldHandler("typeArchive", option[1].label)
+            return [option[1]]  
+          } else {
+            updateFieldHandler("typeArchive", [])
+            return []
+          }
+        })
+      } else {
+        setSelectedArchiveType(prev => {
+          updateFieldHandler("typeArchive", option[0].label || "")
+          return option
+        })
+      }
+    }
     
   return (
     <div className='input-steps-content'>
         <div className="input">
             <label htmlFor="">{inputs[0]}</label> <br />
+            <MultiSelect
+              options={typeContent}
+              value={selectedArchiveType}
+              onChange={handleChangeContent}
+              labelledBy="Select"
+              hasSelectAll={false}
+              closeOnChangedValue={true}
+            />
             
-            <input type="text" name='conteudo' value={data.typeArchive || ""} onChange={(e) => updateFieldHandler("typeArchive", e.target.value)}  placeholder='Tipo de conteudo: pdf, img ...' required/>
+            {/* <input type="text" name='conteudo' value={data.typeArchive || ""} onChange={(e) => updateFieldHandler("typeArchive", e.target.value)}  placeholder='Tipo de conteudo: pdf, img ...' required/> */}
         </div>
         <div className="input">
             <label htmlFor="">{inputs[1]}</label> <br />
