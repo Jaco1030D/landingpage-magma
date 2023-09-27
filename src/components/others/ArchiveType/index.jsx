@@ -6,14 +6,30 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
     const [selected, setSelected] = useState([]);
     const [selectedOrigin, setSelectedOrigin] = useState([]);
 
-    const handleChange = async (option) => {
+    const handleChangeOrigin = (option) => {
+      console.log(option);
       console.log(option);
       if (selectedOrigin[0]) {
-        console.log(selectedOrigin);
-        setSelectedOrigin([option[1]])
+        setSelectedOrigin(prev => {
+          updateFieldHandler("trasnlation", option[1].label)
+          return [option[1]]
+        })
       } else {
-        setSelectedOrigin(option)
+        setSelectedOrigin(prev => {
+          updateFieldHandler("origin", option[0].label)
+          return option
+        })
       }
+    }
+    const handleChangeTranslation = (options) => {
+      let string = []
+      options.forEach(element => {
+        string.push(element.label)
+      });
+      setSelected(prev => {
+        updateFieldHandler("translation", string.join(", "))
+        return options
+      })
     }
     
   return (
@@ -28,7 +44,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
             <MultiSelect
               options={languages}
               value={selectedOrigin}
-              onChange={handleChange}
+              onChange={handleChangeOrigin}
               labelledBy="Select"
               hasSelectAll={false}
               closeOnChangedValue={true}
@@ -47,7 +63,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
             <MultiSelect
               options={languages}
               value={selected}
-              onChange={setSelected}
+              onChange={handleChangeTranslation}
               labelledBy="Select"
               hasSelectAll={false}
             />
