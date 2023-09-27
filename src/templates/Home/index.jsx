@@ -12,7 +12,7 @@ function Home() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/obrigado' element={<Thanks />} />
-        <Route path='/Quotation' element={<Navigate to={'/obrigado'} />} />
+        <Route path='/teste' element={<Navigate to={'/obrigado'} />} />
       </Routes>
       <Footer />
       </BrowserRouter>
