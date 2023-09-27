@@ -6,6 +6,7 @@ import Steps from '../Steps'
 import './style.css'
 import FormContent from '../FormContent'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const formTemplate = {
   typeArchive: '',
@@ -34,12 +35,18 @@ const Form = ({ texts}) => {
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
+  const navigate = useNavigate()
+
+  const handleSubmit = () => {
+    navigate("/obrigado")
+  }
+
   return (
     <div className='form-container'>
       <div className="form-content">
       <Steps currentStep={currentStep}/>
       <div className="vertical-line"></div>
-      <FormContent isLastStep={isLastStep} data={data} texts={texts} currentComponent={currentComponent} changeStep={changeStep} currentStep={currentStep} />
+      <FormContent isLastStep={isLastStep} data={data} texts={texts} currentComponent={currentComponent} changeStep={changeStep} handleSubmit={handleSubmit} currentStep={currentStep} />
       </div>
     </div>
   )

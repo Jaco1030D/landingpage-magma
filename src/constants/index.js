@@ -24,6 +24,12 @@ export const languages = [
     { value: "da", label: "Dinamarquês" }
   ];
   
+export const ThanksText = {
+    title: 'Agradecemos pelo contato',
+    text: 'Obrigado por compartilhar seus detalhes. Em breve, nossa equipe entrará em contato para discutir suas necessidades de tradução',
+    btnText: 'Voltar A home',
+    image: img.ImgThanks
+}
 
 export const QuotationServiceText = {
     title: 'Serviço de Tradução Técnica',

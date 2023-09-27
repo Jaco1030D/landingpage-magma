@@ -1,0 +1,32 @@
+#section-thanks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 65vh;
+    width: 70%;
+}
+
+#section-thanks .img {
+    width: 40%;
+}
+
+#section-thanks .text {
+    width: 60%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#section-thanks .text p {
+    line-height: 35.86px;
+    font-weight: 700;
+    font-size: 17.93px;
+}
+
+#section-thanks .text h1 {
+    line-height: 59.78px;
+    font-weight: 700;
+    font-size: 49.82px;
+
+}

@@ -7,12 +7,12 @@ const Archive = ({data, updateFieldHandler}) => {
   const input = useRef()
   const handleFileChange = (e) => {
     const count = e.target.files.length;
-    const files = e.target.files
-    let arrayFileName = []
-    for (let index = 0; index < files.length; index++) {
-      const element = files[index].name;
-      arrayFileName.push(element)
-    }
+    // const files = e.target.files
+    // let arrayFileName = []
+    // for (let index = 0; index < files.length; index++) {
+    //   const element = files[index].name;
+    //   arrayFileName.push(element)
+    // }
     // setArchives(arrayFileName);
     setNumArchives(count);
   }
@@ -55,7 +55,7 @@ const Archive = ({data, updateFieldHandler}) => {
             Aquivos adicionados: {numArchives} <br />
             </label>
             
-            <input ref={input}  onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive1' onDrop={handleDrop} onChange={handleFileChange} multiple/>
+            <input ref={input} onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive1' onDrop={handleDrop} onChange={handleFileChange}/>
         </div>
       {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />

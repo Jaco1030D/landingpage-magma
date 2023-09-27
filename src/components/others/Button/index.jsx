@@ -2,10 +2,10 @@ import React from 'react'
 
 import './style.css'
 
-const Button = () => {
+const Button = ({text, handleClick}) => {
   return (
     <div className="button">
-        <button>Entrar em contato</button>
+        <button onClick={handleClick} >{text || "Entrar em contato"}</button>
     </div>
   )
 }
