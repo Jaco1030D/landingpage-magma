@@ -7,6 +7,13 @@ import Button from '../../others/Button'
 const MarginTop = "192.8px"
 
 const SectorsActivity = () => {
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  }
   return (
     <div className='section' style={{marginTop: MarginTop}}>
       <h2>{SectorsActivityText.title}</h2>
@@ -15,7 +22,7 @@ const SectorsActivity = () => {
           <SectorsActivityContainer key={index} item={item} />
         ))}
       </div>
-      <Button />
+      <Button handleClick={handleClick} />
     </div>
   )
 }

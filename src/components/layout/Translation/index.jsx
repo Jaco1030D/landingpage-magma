@@ -7,6 +7,12 @@ import './style.css'
 const MarginTop = "146px"
 
 const Translation = () => {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', 
+    });
+  }
   return (
     <div className='section' style={{marginTop: MarginTop}}>
       <div className="section-text">
@@ -18,7 +24,7 @@ const Translation = () => {
           <TranslationDocument key={index} item={item} />
         ))}
       </div>
-      <Button />
+      <Button handleClick={handleClick} />
     </div>
   )
 }

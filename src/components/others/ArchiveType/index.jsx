@@ -64,7 +64,6 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
               options={typeContent}
               value={selectedArchiveType}
               onChange={handleChangeContent}
-              labelledBy="Select"
               hasSelectAll={false}
               closeOnChangedValue={true}
             />
@@ -77,7 +76,6 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
               options={languages}
               value={selectedOrigin}
               onChange={handleChangeOrigin}
-              labelledBy="Select"
               hasSelectAll={false}
               closeOnChangedValue={true}
             />
@@ -96,7 +94,6 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
               options={languages}
               value={selected}
               onChange={handleChangeTranslation}
-              labelledBy="Select"
               hasSelectAll={false}
             />
             {/* <select value={""} name="tradução" id="traducao">
