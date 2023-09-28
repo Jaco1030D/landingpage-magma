@@ -82,3 +82,6 @@
 .item.checked .check-icon{
     transform: scale(1);
 }
+select {
+    appearance: none;
+}
