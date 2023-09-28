@@ -1,6 +1,7 @@
 import * as img from './img'
 
 export const typeContent = [
+    {value: "", label: "Selecione..."},
     {value: "type1", label: "tipo1"},
     {value: "type2", label: "tipo2"},
     {value: "type3", label: "tipo3"},
@@ -10,6 +11,7 @@ export const typeContent = [
 ]
 
 export const languages = [
+    {value: "", label: "Selecione..."},
     { value: "pt", label: "Português" },
     { value: "en", label: "Inglês" },
     { value: "es", label: "Espanhol" },

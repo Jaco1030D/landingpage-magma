@@ -1,9 +1,32 @@
-import React, { useState } from 'react'
-import { languages} from '../../../constants'
-import { MultiSelect } from 'react-multi-select-component';
+import React, { useEffect, useState } from 'react'
+import { languages, typeContent} from '../../../constants'
+// import { MultiSelect } from 'react-multi-select-component';
+import './style.css'
+
+const Item = ({name, handleClick}) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleItemClick = () => {
+    setIsChecked(!isChecked);
+  };
+
+  useEffect(() => {
+    handleClick()
+  },[isChecked])
+  return (
+    <li className={`item ${isChecked ? 'checked' : ''}`} onClick={handleItemClick} >
+        <span className="checkbox">
+            <i className="fa-solid fa-check check-icon"></i>
+        </span>
+        <span className="item-text">{name}</span>
+    </li>
+  )
+}
 
 const ArchiveType = ({data, updateFieldHandler, inputs}) => {
-    const [selected, setSelected] = useState([]);
+    // const [selected, setSelected] = useState([]);
+    const [openFirst, setOpenFirst] = useState(false)
+    const [languagens, setLanguages] = useState([])
     // const [selectedOrigin, setSelectedOrigin] = useState([]);
     // const [selectedArchiveType, setSelectedArchiveType] = useState([])
 
@@ -26,16 +49,16 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
     //     })
     //   }
     // }
-    const handleChangeTranslation = (options) => {
-      let string = []
-      options.forEach(element => {
-        string.push(element.label)
-      });
-      setSelected(prev => {
-        updateFieldHandler("translation", string.join(", "))
-        return options
-      })
-    }
+    // const handleChangeTranslation = (options) => {
+    //   let string = []
+    //   options.forEach(element => {
+    //     string.push(element.label)
+    //   });
+    //   setSelected(prev => {
+    //     updateFieldHandler("translation", string.join(", "))
+    //     return options
+    //   })
+    // }
     // const handleChangeContent = (option) => {
     //   console.log(option);
     //   if (selectedArchiveType[0]) {
@@ -55,11 +78,29 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
     //     })
     //   }
     // }
+    const handleClick = () => {
+      setOpenFirst(prev => !prev)
+    }
+
+    const handleGetValue = () => {
+      const elements = document.getElementById('list').querySelectorAll('.checked');
+      let itens = []
+      elements.forEach((element) => {
+        itens.push(element.textContent)
+      });
+      updateFieldHandler("translation", itens.join(", "))
+      setLanguages(itens)
+    }
     
   return (
     <div className='input-steps-content'>
         <div className="input">
             <label htmlFor="">{inputs[0]}</label> <br />
+            <select name="" id="" onChange={e => updateFieldHandler("typeArchive", e.target.value)}>
+            {typeContent.map((item, index) => (
+              <option key={index} value={item.value}>{item.label}</option>
+            ))}
+            </select>
             {/* <MultiSelect
               options={typeContent}
               value={selectedArchiveType}
@@ -72,6 +113,12 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
         </div>
         <div className="input">
             <label htmlFor="">{inputs[1]}</label> <br />
+            <select name="" id="" onChange={e => updateFieldHandler("origin", e.target.value)}>
+            {languages.map((item, index) => (
+              <option key={index} value={item.value}>{item.label}</option>
+            ))}
+            </select>
+            
             {/* <MultiSelect
               options={languages}
               value={selectedOrigin}
@@ -90,6 +137,14 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
         <div className="input">
           
             <label htmlFor="">{inputs[2]}</label> <br />
+            <div className={`select select-btn ${openFirst && 'open'}`} onClick={handleClick}>
+                <span className="btn-text">{languagens[0] || "Selecione uma linguagem"}...</span>
+            </div>
+            <ul className="list-items" id='list'>
+                {languages.map((item, index) => (
+                  <Item key={index} name={item.label} handleClick={handleGetValue} />
+                ))}
+            </ul>
             {/* <MultiSelect
               options={languages}
               value={selected}
