@@ -142,6 +142,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
                 {languages.map((item, index) => (
                   <Item key={index} name={item.label} handleClick={handleGetValue} />
                 ))}
+                
             </ul>
             {/* <MultiSelect
               options={languages}
