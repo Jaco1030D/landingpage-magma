@@ -102,6 +102,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
     }
     useEffect(() => {
       const handleClickOutside = (e) => {
+        console.log(selectRef);
         if (selectRef.current && !selectRef.current.contains(e.target)) {
           setOpenFirst(false);
         }

@@ -11,7 +11,7 @@ const Terms = () => {
           <div key={index}>
           <h2>{item.title}</h2>
           {item.topics.map((item, index) => (
-            <p key={index}>{item.number} <strong>{item.strong}</strong>{item.text} </p>
+            <p key={index}>{item.number} <strong>{item.strong}</strong> {item.text} </p>
           ))}
           </div>
         ))}     

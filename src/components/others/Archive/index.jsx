@@ -11,9 +11,11 @@ const Archive = ({data, updateFieldHandler}) => {
   const file4 = useRef()
   const file5 = useRef()
   const file6 = useRef()
+  const refsArray = [file1, file2, file3, file4, file5, file6]
   const handleFileChange = (e) => {
     const count = e.target.files.length;
     const files = e.target.files
+    addFiles(files)
     let arrayFile = []
     for (let index = 0; index < files.length; index++) {
       const element = files[index];
@@ -21,6 +23,22 @@ const Archive = ({data, updateFieldHandler}) => {
     }
     setArchives(arrayFile);
     setNumArchives(count);
+  }
+  const addFiles = (files) => {
+    console.log(files.length);
+
+    for (let index = 0; index < files.length; index++) {
+      const file = files[index];
+      const inputRef = refsArray[index]
+      inputRef.current.files = file
+    }
+    // files.FileList.map((item) => {
+    //   console.log(item);
+    // })
+    // files.forEach((file, index) => {
+    //   const inputRef = refsArray[index]
+    //   inputRef.current.files = [file]
+    // } )
   }
   const handleDrop = (e) => {
     e.preventDefault()
@@ -30,7 +48,7 @@ const Archive = ({data, updateFieldHandler}) => {
     }
   }
   useEffect(() => {
-    file1.current.files = archives[1]
+    console.log(archives);
   },[archives])
   return (
     <div>
