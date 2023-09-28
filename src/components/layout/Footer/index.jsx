@@ -14,7 +14,7 @@ const Footer = () => {
         <p>{FooterText.description}</p>
         <p>
           {FooterText.reserved} <br />
-        <a href="/">Termos de serviço</a>
+        <a href="/termos">Termos de serviço</a>
         </p>
       </div>
     </div>
