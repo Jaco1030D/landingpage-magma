@@ -95,8 +95,8 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
   return (
     <div className='input-steps-content'>
         <div className="input">
-            <label htmlFor="">{inputs[0]}</label> <br />
-            <select name="" id="" onChange={e => updateFieldHandler("typeArchive", e.target.value)}>
+            <label htmlFor="content">{inputs[0]}</label> <br />
+            <select name="content" id="content" onChange={e => updateFieldHandler("typeArchive", e.target.value)}>
             {typeContent.map((item, index) => (
               <option key={index} value={item.value}>{item.label}</option>
             ))}
@@ -111,8 +111,8 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
             
         </div>
         <div className="input">
-            <label htmlFor="">{inputs[1]}</label> <br />
-            <select name="" id="" onChange={e => updateFieldHandler("origin", e.target.value)}>
+            <label htmlFor="languages">{inputs[1]}</label> <br />
+            <select name="languages" id="languages" onChange={e => updateFieldHandler("origin", e.target.value)}>
             {languages.map((item, index) => (
               <option key={index} value={item.value}>{item.label}</option>
             ))}
@@ -134,7 +134,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
         </div>
         <div className="input">
           
-            <label htmlFor="">{inputs[2]}</label> <br />
+            <label>{inputs[2]}</label> <br />
             <div className={`select select-btn ${openFirst && 'open'}`} onClick={handleClick}>
                 <span className="btn-text">{languagens[0] || "Selecione uma linguagem"}...</span>
             </div>
