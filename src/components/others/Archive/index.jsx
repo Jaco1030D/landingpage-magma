@@ -1,19 +1,25 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
   const [numArchives, setNumArchives] = useState(0)
-  // const [archives, setArchives] = useState([''])
+  const [archives, setArchives] = useState([''])
   const input = useRef()
+  const file1 = useRef()
+  const file2 = useRef()
+  const file3 = useRef()
+  const file4 = useRef()
+  const file5 = useRef()
+  const file6 = useRef()
   const handleFileChange = (e) => {
     const count = e.target.files.length;
-    // const files = e.target.files
-    // let arrayFileName = []
-    // for (let index = 0; index < files.length; index++) {
-    //   const element = files[index].name;
-    //   arrayFileName.push(element)
-    // }
-    // setArchives(arrayFileName);
+    const files = e.target.files
+    let arrayFile = []
+    for (let index = 0; index < files.length; index++) {
+      const element = files[index];
+      arrayFile.push(element)
+    }
+    setArchives(arrayFile);
     setNumArchives(count);
   }
   const handleDrop = (e) => {
@@ -23,6 +29,9 @@ const Archive = ({data, updateFieldHandler}) => {
       setNumArchives(e.dataTransfer.files.length)
     }
   }
+  useEffect(() => {
+    file1.current.files = archives[1]
+  },[archives])
   return (
     <div>
       <input type='hidden' name='form-name' value="Quotation" />
@@ -52,10 +61,18 @@ const Archive = ({data, updateFieldHandler}) => {
             <p>Adicione seus arquivos:</p>
             <br />
             <label htmlFor='file'>Adicione seus arquivos <br />
-            Aquivos adicionados: {numArchives} <br />
+            Adicionados: {numArchives} <br />
             </label>
             
             <input ref={input} onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive1' onDrop={handleDrop} onChange={handleFileChange} multiple/>
+        </div>
+        <div className="input display-none">
+          <input ref={file1} type="file" name='archive1' />
+          <input ref={file2} type="file" name='archive2' />
+          <input ref={file3} type="file" name='archive3' />
+          <input ref={file4} type="file" name='archive4' />
+          <input ref={file5} type="file" name='archive5' />
+          <input ref={file6} type="file" name='archive6' />
         </div>
       {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />

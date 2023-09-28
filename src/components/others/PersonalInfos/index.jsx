@@ -5,7 +5,7 @@ const PersonalInfos = ({inputs, data, updateFieldHandler}) => {
     <div className='input-steps-content'>
         <div className="input">
             <label htmlFor="">{inputs[0]}</label> <br />
-            <input type="text" name='name' placeholder='Tipo de conteudo: pdf, img ...' value={data.name || ""} onChange={(e) => updateFieldHandler("name", e.target.value)} required/>
+            <input type="text" name='name' placeholder='Seu nome ...' value={data.name || ""} onChange={(e) => updateFieldHandler("name", e.target.value)} required/>
         </div>
         <div className="input">
             <label htmlFor="">{inputs[1]}</label> <br />
