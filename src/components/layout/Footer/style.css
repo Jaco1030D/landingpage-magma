@@ -10,3 +10,12 @@
     gap: 60px;
     margin-bottom: 98px;
 }
+
+.terms{
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: #0000EE;
+    cursor: pointer;
+}
