@@ -66,6 +66,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
               onChange={handleChangeContent}
               hasSelectAll={false}
               closeOnChangedValue={true}
+              aria-readonly={false}
             />
             
             {/* <input type="text" name='conteudo' value={data.typeArchive || ""} onChange={(e) => updateFieldHandler("typeArchive", e.target.value)}  placeholder='Tipo de conteudo: pdf, img ...' required/> */}
