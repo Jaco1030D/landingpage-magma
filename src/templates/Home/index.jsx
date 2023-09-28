@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Footer, Navbar } from '../../components';
 import Main from '../Main';
 import Thanks from '../Thanks';
@@ -13,6 +13,7 @@ function Home() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/obrigado' element={<Thanks />} />
+        <Route path='/Quotation' element={<Navigate to={'/obrigado'} />} />
         <Route path='/termos' element={<Terms />} />
       </Routes>
       <Footer />
