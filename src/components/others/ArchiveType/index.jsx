@@ -12,7 +12,7 @@ const Item = ({name, handleClick}) => {
 
   useEffect(() => {
     handleClick()
-  },[isChecked])
+  },[isChecked, handleClick])
   return (
     <li className={`item ${isChecked ? 'checked' : ''}`} onClick={handleItemClick} >
         <span className="checkbox">
@@ -142,7 +142,7 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
                 {languages.map((item, index) => (
                   <Item key={index} name={item.label} handleClick={handleGetValue} />
                 ))}
-                
+
             </ul>
             {/* <MultiSelect
               options={languages}
