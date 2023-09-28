@@ -90,12 +90,12 @@ const ArchiveType = ({data, updateFieldHandler, inputs}) => {
         <div className="input">
           
             <label htmlFor="">{inputs[2]}</label> <br />
-            <MultiSelect
+            {/* <MultiSelect
               options={languages}
               value={selected}
               onChange={handleChangeTranslation}
               hasSelectAll={false}
-            />
+            /> */}
             {/* <select value={""} name="tradução" id="traducao">
               {languages.map((item, index) => (
                 <option value={item.value}>{item.label}</option>
