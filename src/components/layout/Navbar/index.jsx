@@ -1,12 +1,18 @@
 import React from 'react'
 import { Logo } from '../../../constants/img'
 import './style.css'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate("/")
+  }
   return (
     <div className='navbar-container'>
       <div className="navbar-content">
-      <a href="/"><img src={Logo} alt="logo" id='logo-navbar' /></a>
+      <img src={Logo} onClick={handleClick} alt="logo" id='logo-navbar' />
       </div>
     </div>
   )

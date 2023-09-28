@@ -1,6 +1,7 @@
 #logo-navbar {
     max-width: 194px;
     max-height: 54px;
+    cursor: pointer;
 }
 .navbar-content {
     width: 68%;
