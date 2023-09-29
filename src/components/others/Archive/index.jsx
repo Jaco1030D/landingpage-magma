@@ -35,7 +35,7 @@ const Archive = ({data, updateFieldHandler}) => {
 
       const input = refsArray[index]
 
-      input.current.files = data.files[0]
+      input.current.files = data.files
 
       data.items.remove(0)
 
