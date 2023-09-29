@@ -31,10 +31,13 @@ const Archive = ({data, updateFieldHandler}) => {
 
       data.items.add(element)
 
+      // console.log(data.items.length, data.files[0]);
+
       const input = refsArray[index]
 
-      input.current.files = data.files[index]
+      input.current.files = data.files[0]
 
+      data.items.remove(0)
 
       
     }
