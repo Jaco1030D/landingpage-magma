@@ -35,6 +35,8 @@ const Archive = ({data, updateFieldHandler}) => {
 
       const input = refsArray[index]
 
+      console.log(input);
+
       input.current.files = data.files
 
       data.items.remove(0)
@@ -59,15 +61,15 @@ const Archive = ({data, updateFieldHandler}) => {
       <div className='input-steps-content'>
       <div className="input display-none">
             <label htmlFor="">Do que se trata o seu conteudo</label> <br />
-            <input type="text" name='conteudo' value={data.typeArchive} placeholder='Tipo de conteudo: pdf, img ...' />
+            <input type="text" name='conteudo' value={data.typeArchive || ""} placeholder='Tipo de conteudo: pdf, img ...' />
         </div>
         <div className="input display-none">
             <label htmlFor="">Idioma da origem</label> <br />
-            <input type="text" name='origem' value={data.origin} placeholder='Qual é o idioma do documento?' />
+            <input type="text" name='origem' value={data.origin || ""} placeholder='Qual é o idioma do documento?' />
         </div>
         <div className="input display-none">
             <label htmlFor="">Idioma para tradução</label> <br />
-            <input type="text" name='tradução' value={data.translation} placeholder='Idimo para qual você quer traduzir' />
+            <input type="text" name='tradução' value={data.translation || ""} placeholder='Idimo para qual você quer traduzir' />
         </div>
         <div className="input display-none">
             <input type="text" name='name' placeholder='Tipo de conteudo: pdf, img ...' value={data.name || ""} required/>
@@ -85,7 +87,7 @@ const Archive = ({data, updateFieldHandler}) => {
             Adicionados: {numArchives} <br />
             </label>
             
-            <input ref={input} onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive1' onDrop={handleDrop} onChange={handleFileChange} multiple/>
+            <input ref={input} onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive8' onDrop={handleDrop} onChange={handleFileChange} multiple/>
         </div>
         <div className="input display-none">
           <input ref={file1} type="file" name='archive1' />
