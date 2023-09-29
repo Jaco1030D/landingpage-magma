@@ -27,14 +27,13 @@ const Archive = ({data, updateFieldHandler}) => {
     let data = new DataTransfer()
 
     for (let index = 0; index < files.length; index++) {
-      data.clearData();
       const element = files[index];
 
       data.items.add(element)
 
       const input = refsArray[index]
 
-      input.current.files = data.files
+      input.current.files = data.files[index]
 
 
       
