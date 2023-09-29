@@ -3,6 +3,7 @@ import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
   const [numArchives, setNumArchives] = useState(0)
+  const [key, setKey] = useState(0);
   const input = useRef()
   const file1 = useRef()
   const file2 = useRef()
@@ -35,14 +36,14 @@ const Archive = ({data, updateFieldHandler}) => {
 
       const input = refsArray[index]
 
-      console.log(input);
-
       input.current.files = data.files
 
       data.items.remove(0)
 
       
     }
+
+    limparInputFile();
     // files.forEach((file, index) => {
     //   const inputRef = refsArray[index]
     //   inputRef.current.files = [file]
@@ -55,6 +56,9 @@ const Archive = ({data, updateFieldHandler}) => {
       setNumArchives(e.dataTransfer.files.length)
     }
   }
+  const limparInputFile = () => {
+    input.current.value = ""
+  };
   return (
     <div>
       <input type='hidden' name='form-name' value="Quotation" />
