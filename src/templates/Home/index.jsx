@@ -12,6 +12,7 @@ function Home() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Main />} />
+        <Route path='/en/finance' element={<Main />} />
         <Route path='/obrigado' element={<Thanks />} />
         <Route path='/Quotation' element={<Navigate to={'/obrigado'} />} />
         <Route path='/termos' element={<Terms />} />
