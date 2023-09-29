@@ -3,7 +3,6 @@ import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
   const [numArchives, setNumArchives] = useState(0)
-  const [key, setKey] = useState(0);
   const input = useRef()
   const file1 = useRef()
   const file2 = useRef()
@@ -15,7 +14,7 @@ const Archive = ({data, updateFieldHandler}) => {
   const handleFileChange = (e) => {
     const count = e.target.files.length;
     const files = e.target.files
-    addFiles(files)
+    addFiles(files, e)
     let arrayFile = []
     for (let index = 0; index < files.length; index++) {
       const element = files[index];
@@ -23,11 +22,11 @@ const Archive = ({data, updateFieldHandler}) => {
     }
     setNumArchives(count);
   }
-  const addFiles = (files) => {
+  const addFiles = (files, e) => {
     
-    let data = new DataTransfer()
-
+    
     for (let index = 0; index < files.length; index++) {
+      let data = new DataTransfer()
       const element = files[index];
 
       data.items.add(element)
@@ -37,8 +36,6 @@ const Archive = ({data, updateFieldHandler}) => {
       const input = refsArray[index]
 
       input.current.files = data.files
-
-      data.items.remove(0)
 
       
     }
