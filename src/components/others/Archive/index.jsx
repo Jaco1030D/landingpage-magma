@@ -94,12 +94,12 @@ const Archive = ({data, updateFieldHandler}) => {
             <input ref={input} onDragOver={(e) => e.preventDefault()} type="file" id='file' name='archive8' onDrop={handleDrop} onChange={handleFileChange} multiple/>
         </div>
         <div className="input display-none">
-          <input ref={file1} type="file" name='archive1' />
-          <input ref={file2} type="file" name='archive2' />
-          <input ref={file3} type="file" name='archive3' />
-          <input ref={file4} type="file" name='archive4' />
-          <input ref={file5} type="file" name='archive5' />
-          <input ref={file6} type="file" name='archive6' />
+          <input ref={file1} type="file" name='archive1' multiple/>
+          <input ref={file2} type="file" name='archive2' multiple/>
+          <input ref={file3} type="file" name='archive3' multiple/>
+          <input ref={file4} type="file" name='archive4' multiple/>
+          <input ref={file5} type="file" name='archive5' multiple/>
+          <input ref={file6} type="file" name='archive6' multiple/>
         </div>
       {/* <div className="input file">
             <label htmlFor="">Adicione seus arquivos</label> <br />
