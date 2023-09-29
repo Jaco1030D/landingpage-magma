@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
   const [numArchives, setNumArchives] = useState(0)
-  const [archives, setArchives] = useState([''])
   const input = useRef()
   const file1 = useRef()
   const file2 = useRef()
@@ -21,20 +20,25 @@ const Archive = ({data, updateFieldHandler}) => {
       const element = files[index];
       arrayFile.push(element)
     }
-    setArchives(arrayFile);
     setNumArchives(count);
   }
   const addFiles = (files) => {
-    console.log(files.length);
+    
+    let data = new DataTransfer()
 
     for (let index = 0; index < files.length; index++) {
-      const file = files[index];
-      const inputRef = refsArray[index]
-      inputRef.current.files = file
+      data.clearData();
+      const element = files[index];
+
+      data.items.add(element)
+
+      const input = refsArray[index]
+
+      input.current.files = data.files
+
+
+      
     }
-    // files.FileList.map((item) => {
-    //   console.log(item);
-    // })
     // files.forEach((file, index) => {
     //   const inputRef = refsArray[index]
     //   inputRef.current.files = [file]
@@ -47,9 +51,6 @@ const Archive = ({data, updateFieldHandler}) => {
       setNumArchives(e.dataTransfer.files.length)
     }
   }
-  useEffect(() => {
-    console.log(archives);
-  },[archives])
   return (
     <div>
       <input type='hidden' name='form-name' value="Quotation" />
