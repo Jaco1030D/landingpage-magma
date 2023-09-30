@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './style.css'
 
 const Archive = ({data, updateFieldHandler}) => {
@@ -28,13 +28,11 @@ const Archive = ({data, updateFieldHandler}) => {
     e.preventDefault()
     if (e.dataTransfer.files.length > 0) {
       input.current.files = e.dataTransfer.files;
-      // console.log(e.dataTransfer.files);
-      // const files = e.dataTransfer.files;
-      // updateFieldHandler("files", files)
+      e.target.files = e.dataTransfer.files;
+      updateFieldHandler("files", e.target.files)
       setNumArchives(e.dataTransfer.files.length)
     }
   }
-  console.log(data.files);
   return (
     <div>
       <div className='input-steps-content'>
