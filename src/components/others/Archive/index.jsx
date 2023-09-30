@@ -26,11 +26,13 @@ const Archive = ({data, updateFieldHandler}) => {
   const handleDrop = (e) => {
     e.preventDefault()
     if (e.dataTransfer.files.length > 0) {
-      input.current.files = e.dataTransfer.files; 
-      updateFieldHandler("files", input.current.files)
+      input.current.files = e.dataTransfer.files;
+      const files = e.dataTransfer.files;
+      updateFieldHandler("files", files)
       setNumArchives(e.dataTransfer.files.length)
     }
   }
+  console.log(data.files);
   return (
     <div>
       <div className='input-steps-content'>

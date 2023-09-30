@@ -25,7 +25,9 @@ const PersonalInfos = ({inputs, data, updateFieldHandler}) => {
 
       input.current.files = data.files
 
-      
+      console.log(input.current.files);
+
+      console.log(data.files);
     }
     // files.forEach((file, index) => {
     //   const inputRef = refsArray[index]
