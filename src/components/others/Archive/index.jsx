@@ -14,6 +14,7 @@ const Archive = ({data, updateFieldHandler}) => {
   const handleFileChange = (e) => {
     const count = e.target.files.length;
     const files = e.target.files
+    console.log(e.target.files);
     updateFieldHandler("files", files)
     // addFiles(files, e)
     // let arrayFile = []
@@ -27,8 +28,9 @@ const Archive = ({data, updateFieldHandler}) => {
     e.preventDefault()
     if (e.dataTransfer.files.length > 0) {
       input.current.files = e.dataTransfer.files;
-      const files = e.dataTransfer.files;
-      updateFieldHandler("files", files)
+      // console.log(e.dataTransfer.files);
+      // const files = e.dataTransfer.files;
+      // updateFieldHandler("files", files)
       setNumArchives(e.dataTransfer.files.length)
     }
   }
