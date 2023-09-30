@@ -33,6 +33,7 @@ const PersonalInfos = ({inputs, data, updateFieldHandler}) => {
     // } )
   }
   useEffect(() => {
+    console.log(data.files);
     addFiles(data.files)
   },[])
   return (

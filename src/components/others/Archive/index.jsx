@@ -27,13 +27,10 @@ const Archive = ({data, updateFieldHandler}) => {
     e.preventDefault()
     if (e.dataTransfer.files.length > 0) {
       input.current.files = e.dataTransfer.files; 
-      updateFieldHandler("files", e.dataTransfer.files)
+      updateFieldHandler("files", input.current.files)
       setNumArchives(e.dataTransfer.files.length)
     }
   }
-  const limparInputFile = () => {
-    input.current.value = ""
-  };
   return (
     <div>
       <div className='input-steps-content'>
