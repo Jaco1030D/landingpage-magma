@@ -52,6 +52,7 @@ const Archive = ({data, updateFieldHandler}) => {
     if (e.dataTransfer.files.length > 0) {
       addFiles(e.dataTransfer.files)
       input.current.files = e.dataTransfer.files; 
+      updateFieldHandler("files", e.dataTransfer.files)
       setNumArchives(e.dataTransfer.files.length)
     }
   }
