@@ -37,6 +37,8 @@ const PersonalInfos = ({inputs, data, updateFieldHandler}) => {
   },[])
   return (
     <div className='input-steps-content'>
+      
+      <input type='hidden' name='form-name' value="Quotation" />
         <div className="input">
             <label htmlFor="">{inputs[0]}</label> <br />
             <input type="text" name='name' placeholder='Seu nome ...' value={data.name || ""} onChange={(e) => updateFieldHandler("name", e.target.value)} required/>

@@ -60,7 +60,6 @@ const Archive = ({data, updateFieldHandler}) => {
   };
   return (
     <div>
-      <input type='hidden' name='form-name' value="Quotation" />
       <div className='input-steps-content'>
       
         
