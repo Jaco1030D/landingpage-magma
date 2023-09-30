@@ -23,34 +23,9 @@ const Archive = ({data, updateFieldHandler}) => {
     // }
     setNumArchives(count);
   }
-  const addFiles = (files, e) => {
-    
-    
-    for (let index = 0; index < files.length; index++) {
-      let data = new DataTransfer()
-      const element = files[index];
-
-      data.items.add(element)
-
-      // console.log(data.items.length, data.files[0]);
-
-      const input = refsArray[index]
-
-      input.current.files = data.files
-
-      
-    }
-
-    limparInputFile();
-    // files.forEach((file, index) => {
-    //   const inputRef = refsArray[index]
-    //   inputRef.current.files = [file]
-    // } )
-  }
   const handleDrop = (e) => {
     e.preventDefault()
     if (e.dataTransfer.files.length > 0) {
-      addFiles(e.dataTransfer.files)
       input.current.files = e.dataTransfer.files; 
       updateFieldHandler("files", e.dataTransfer.files)
       setNumArchives(e.dataTransfer.files.length)
