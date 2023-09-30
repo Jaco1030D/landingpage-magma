@@ -643,7 +643,7 @@ export const FeedbackText = {
     card: [
         {
             icon: img.Elisabeth,
-            name: 'Elisabeth',
+            name: 'Elisabeth Vogel',
             company: 'Anton Paar',
             description: 'Na Magma Translation, encontramos profissionalismo e precisão em cada projeto. Anton Paar agradece pela parceria e recomenda seus excelentes serviços de tradução.',
             stars: [
@@ -656,7 +656,7 @@ export const FeedbackText = {
         },
         {
             icon: img.Ricardo,
-            name: 'Ricardo',
+            name: 'Ricardo de Aquino Silva',
             company: 'Museu do amanhã',
             description: 'A Magma Translation tem sido uma aliada inestimável na nossa missão de difundir conhecimento. O Museu do Amanhã agradece pela excelência e dedicação em cada tradução.',
             stars: [
@@ -669,7 +669,7 @@ export const FeedbackText = {
         },
         {
             icon: img.Marcelo,
-            name: 'Marcelo',
+            name: 'Marcelo Soares',
             company: 'Ambev',
             description: 'Com a expertise da Magma Translation, a Ambev elevou sua comunicação global a novos patamares. Valorizamos e recomendamos seus impecáveis serviços de tradução.',
             stars: [

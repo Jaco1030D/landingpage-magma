@@ -60,11 +60,11 @@ const FormContent = ({texts, data, currentComponent, changeStep, currentStep, is
             <span>Voltar</span>
           </button>
         {!isLastStep ? (
-          <button type="button" disabled={(!data.name || !data.email) && currentStep === 1 ? true : false } onClick={(e) => changeStep(currentStep + 1, e)}>
+          <button type="button" onClick={(e) => changeStep(currentStep + 1, e)}>
             <span>Avançar</span>
           </button>
         ) : (
-          <button type="submit">
+          <button type="submit"  disabled={(!data.name || !data.email) && currentStep === 2 ? true : false }>
             <span>Enviar</span>
           </button>
         ) }

@@ -39,7 +39,9 @@
     display: none;
 }
 .select-btn.open ~ .list-items{
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .list-items .item, option{
     display: flex;
@@ -49,6 +51,7 @@
     transition: 0.3s;
     padding: 0 5px;
     border-radius: 8px;
+    width: 180px;
 }
 .list-items .item:hover{
     background-color: #e7edfe;

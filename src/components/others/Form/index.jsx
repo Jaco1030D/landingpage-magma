@@ -13,7 +13,8 @@ const formTemplate = {
   translation: '',
   name: '',
   office: '',
-  email: ''
+  email: '',
+  files: ''
 }
 
 const Form = ({ texts}) => {
@@ -28,9 +29,9 @@ const Form = ({ texts}) => {
   const inputs = texts.formSteps.inputs
 
   const formComponents = [
+    <Archive inputs={inputs.step2} data={data} updateFieldHandler={updateFieldHandler} />,
     <ArchiveType inputs={inputs.step1} data={data} updateFieldHandler={updateFieldHandler} />,
     <PersonalInfos inputs={inputs.step3} data={data} updateFieldHandler={updateFieldHandler} />,
-    <Archive inputs={inputs.step2} data={data} updateFieldHandler={updateFieldHandler} />,
   ]
   const { currentStep, currentComponent, changeStep, isLastStep } = useForm(formComponents);
 
