@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
 const PersonalInfos = ({inputs, data, updateFieldHandler}) => {
-  const input = useRef()
   const file1 = useRef()
   const file2 = useRef()
   const file3 = useRef()
